@@ -42,7 +42,7 @@ class EntUsuarios extends \yii\db\ActiveRecord implements IdentityInterface
 	const STATUS_ACTIVED = 2;
 	const STATUS_BLOCKED = 3;
 	const USUARIO_REGISTRADO = "usuario-normal";
-	
+
 	public $repeatPassword;
 	public $repeat;
 	public $repeatEmail;
@@ -69,13 +69,32 @@ class EntUsuarios extends \yii\db\ActiveRecord implements IdentityInterface
 				'on' => 'registerInput',
 				'message' => 'Los email deben coincidir'
 			],
+			[
+				[
+					'txt_curp'
+				],
+				'string',
+				'max' => 18,
+				'message' => 'La curp no cuenta con los 18 caracteres'
+			],
+			[
+				[
+					'txt_rfc'
+				],
+				'string', 
+				'max' => 13, 
+				'min' => 12,
+				'tooLong' => 'El campo no debe superar 13 dígitos',
+				'tooShort' => 'El campo debe ser mínimo de 12 digítos'
+
+			],
 
 			
 				// checks if "username" starts with a letter and contains only word characters
-			['txt_rfc', 'match', 'pattern' => '/^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$/', "message"=>"RFC no válido"],
-			
-			['txt_curp', 'match', 'pattern' => '/^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0\d|1[0-2])(?:[0-2]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$/', "message"=>"RFC no válido"],
-			
+			['txt_rfc', 'match', 'pattern' => '/^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$/', "message" => "RFC no válido"],
+
+			['txt_curp', 'match', 'pattern' => '/^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0\d|1[0-2])(?:[0-2]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$/', "message" => "CURP no válido"],
+
 
 			[
 				[
@@ -227,23 +246,7 @@ class EntUsuarios extends \yii\db\ActiveRecord implements IdentityInterface
 				'max' => 30,
 				'message' => 'Solo puede ingresar 30 caracteres'
 			],
-			[
-				[
-					'txt_curp'
-				],
-				'string',
-				'max' => 18,
-				'message' => 'La curp no cuenta con los 18 caracteres'
-			],
-			[
-				[
-					'txt_rfc'
-				],
-				'string', 'max' => 13, 'min' => 12, 
-				'tooLong' => 'El campo no debe superar 13 dígitos', 
-				'tooShort' => 'El campo debe ser mínimo de 12 digítos'
-
-			],
+			
 			[
 				[
 					'txt_auth_key'
@@ -304,12 +307,12 @@ class EntUsuarios extends \yii\db\ActiveRecord implements IdentityInterface
 			'id_status' => 'Status',
 			'repeatEmail' => 'Repetir email',
 			'password' => 'Contraseña',
-			"txt_rfc"=>"RFC",
-			"txt_curp"=>"CURP",
-			"id_area"=>"Area",
-			"id_oisa"=>"OISA",
-			"txt_conmutador"=>"Conmutador",
-			"txt_extension_numero_local"=>"Extensión o número local"
+			"txt_rfc" => "RFC",
+			"txt_curp" => "CURP",
+			"id_area" => "Area",
+			"id_oisa" => "OISA",
+			"txt_conmutador" => "Conmutador",
+			"txt_extension_numero_local" => "Extensión o número local"
 		];
 	}
 
