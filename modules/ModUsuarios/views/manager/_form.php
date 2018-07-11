@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
@@ -8,29 +9,47 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-    <?php $form = ActiveForm::begin([
-						'id' => 'form-ajax',
-						//'options' => ['class' => 'form-horizontal'],
-						'enableAjaxValidation' => true,
-						'enableClientValidation'=>true,
-					]); ?>
+<?php
+$form = ActiveForm::begin([
+    'id' => 'form-ajax',
+    'enableAjaxValidation' => true,
+    'enableClientValidation' => true,
+    'fieldConfig' => [
+        "template" => "{input}{label}{error}",
+        "options" => [
+            "class" => "form-group form-material floating",
+            "data-plugin" => "formMaterial"
+        ],
+        "labelOptions" => [
+            "class" => "floating-label"
+        ]
+    ]
+]);?>
 
     <?= $form->field($model, 'image')->fileInput(["class"=>"hide"])->label(false) ?> 
 
-    <?= $form->field($model, 'txt_username')->textInput(['maxlength' => true, 'placeholder'=>'Nombre'])->label(false) ?>
 
-    <?= $form->field($model, 'txt_apellido_paterno')->textInput(['maxlength' => true, 'placeholder'=>'Apellido paterno'])->label(false) ?>
+    <?= $form->field($model, 'txt_username')->textInput(["class" => "form-control"]) ?>
 
-    <?= $form->field($model, 'txt_email')->textInput(['maxlength' => true, 'placeholder'=>'Email'])->label(false) ?>
-    <?= $form->field($model, 'repeatEmail')->textInput(['maxlength' => true, 'placeholder'=>'Repetir email'])->label(false) ?>
-    
-    <?= $form->field($model, 'password')->passwordInput(['maxlength' => true, 'placeholder'=>'Contraseña'])->label(false) ?>
-    
-    <?= $form->field($model, 'repeatPassword')->passwordInput(['maxlength' => true, 'placeholder'=>'Repetir contraseña'])->label(false) ?>
+    <?= $form->field($model, 'txt_apellido_paterno')->textInput(["class" => "form-control"]) ?>
 
-    <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Registrarme' : 'Actualizar información', ['class' => "btn btn-success btn-block btn-lg"]) ?>
+    <?= $form->field($model, 'txt_email')->textInput(["class" => "form-control"]) ?>
+
+    <?= $form->field($model, 'repeatEmail')->textInput(["class" => "form-control"]) ?>
+
+    <?= $form->field($model, 'password')->passwordInput(["class" => "form-control"]) ?>
+
+    <?= $form->field($model, 'repeatPassword')->passwordInput(["class" => "form-control"]) ?>
+
+
+    <div class="form-group form-group-actions">
+        <?= Html::submitButton($model->isNewRecord ? 'Registrarme' : 'Actualizar información', ['class' => "btn btn-primary btn-block btn-lg"]) ?>
+	</div>
+
+    <div class="form-group necesito-cuenta">
+        ¿Tienes una cuenta? <a href="<?=Url::base()?>/login">Ingresa</a>
     </div>
 
-    <?php ActiveForm::end(); ?>
+
+<?php ActiveForm::end(); ?>
 

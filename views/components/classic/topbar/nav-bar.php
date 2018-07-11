@@ -50,7 +50,7 @@ role="navigation">
               <?=$usuario->nombreCorto?>
             </span>
             <span class="avatar avatar-online">
-              <img src="<?=Url::base()?>/profiles/<?=$usuario->txt_token."/".$usuario->txt_imagen?>" alt="...">
+              <img src="<?=Url::base()?>/webAssets/templates/classic/global/portraits/avatar.png" alt="...">
               <i></i>
             </span>
           </a>

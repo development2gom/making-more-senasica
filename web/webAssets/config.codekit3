@@ -7,7 +7,7 @@
 		"uuidString": "118FDFD7-4497-4DF2-9219-A11518EFAE4E"
 		}
 	],
-"creatorBuild": "26261",
+"creatorBuild": "26680",
 "files": {
 	"\/components\/select2.js": {
 		"ft": 64,
@@ -364,6 +364,28 @@
 		"oAP": "\/fonts\/web-icons\/web-icons.woff2",
 		"oF": 0
 		},
+	"\/images\/bkgd.jpg": {
+		"ft": 16384,
+		"iS": 196114,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/images\/Fondos-para-tumblr-oscuros-creativo-fondos-de-pantalla-color-azul-oscuro-patr-n-texturas-pared-196114.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/bkgdBK.jpg": {
+		"ft": 16384,
+		"iS": 48127,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/images\/bkgdBK.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/images\/logo.png": {
 		"ft": 32768,
 		"iS": 8136,
@@ -477,6 +499,26 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"\/plugins\/ladda\/ladda.min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/plugins\/ladda\/ladda.min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/plugins\/ladda\/ladda.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/plugins\/ladda\/ladda.min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"\/plugins\/ladda\/spin.js": {
 		"ft": 64,
 		"ma": 0,
@@ -486,6 +528,107 @@
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
+		},
+	"\/plugins\/ladda\/spin.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/plugins\/ladda\/spin.min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/_basic.sassc": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/_basic.sassc",
+		"oF": 0
+		},
+	"\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/_components.sassc": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/_components.sassc",
+		"oF": 0
+		},
+	"\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/_fonts.sassc": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/_fonts.sassc",
+		"oF": 0
+		},
+	"\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/_footer.sassc": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/_footer.sassc",
+		"oF": 0
+		},
+	"\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/_ionicons-font.scssc": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/_ionicons-font.scssc",
+		"oF": 0
+		},
+	"\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/_ionicons-icons.scssc": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/_ionicons-icons.scssc",
+		"oF": 0
+		},
+	"\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/_ionicons-variables.scssc": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/_ionicons-variables.scssc",
+		"oF": 0
+		},
+	"\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/_ionicons.scssc": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/_ionicons.scssc",
+		"oF": 0
+		},
+	"\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/_login.sassc": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/_login.sassc",
+		"oF": 0
+		},
+	"\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/_mixins.sassc": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/_mixins.sassc",
+		"oF": 0
+		},
+	"\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/_usuarios.sassc": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/_usuarios.sassc",
+		"oF": 0
+		},
+	"\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/_variables.sassc": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/_variables.sassc",
+		"oF": 0
+		},
+	"\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/site-extend.sassc": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/sass\/.sass-cache\/d665114bccf2ab62a42afa8a788688d35b723337\/site-extend.sassc",
+		"oF": 0
 		},
 	"\/sass\/_base.sass": {
 		"aP": 0,
@@ -509,6 +652,32 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/sass\/_basic.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/sass\/_basicBK.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/sass\/_basicBK.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/sass\/_components.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/sass\/_components.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -682,6 +851,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/sass\/_variablesBK.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/sass\/_variablesBK.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/sass\/site-extend.sass": {
 		"aP": 1,
 		"bl": 0,
@@ -692,8 +874,8 @@
 		"oA": 0,
 		"oAP": "\/css\/site-extend.css",
 		"oF": 2,
-		"oS": 0,
-		"uL": 1
+		"oS": 3,
+		"uL": 0
 		},
 	"\/templates\/classic\/global\/.babelrc": {
 		"cB": 0,
@@ -1811,6 +1993,67 @@
 		"oAP": "\/templates\/classic\/global\/fonts\/Roboto\/Roboto.min-min.css",
 		"oF": 0,
 		"oS": 3
+		},
+	"\/templates\/classic\/global\/fonts\/stroke\/helper.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/templates\/classic\/global\/fonts\/stroke\/helper-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/templates\/classic\/global\/fonts\/stroke\/pe-icon-7-stroke-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/templates\/classic\/global\/fonts\/stroke\/pe-icon-7-stroke-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/templates\/classic\/global\/fonts\/stroke\/pe-icon-7-stroke.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/templates\/classic\/global\/fonts\/stroke\/pe-icon-7-stroke-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/templates\/classic\/global\/fonts\/stroke\/Pe-icon-7-stroke.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/templates\/classic\/global\/fonts\/stroke\/Pe-icon-7-stroke.eot",
+		"oF": 0
+		},
+	"\/templates\/classic\/global\/fonts\/stroke\/Pe-icon-7-stroke.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/templates\/classic\/global\/fonts\/stroke\/Pe-icon-7-stroke.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/templates\/classic\/global\/fonts\/stroke\/Pe-icon-7-stroke.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/templates\/classic\/global\/fonts\/stroke\/Pe-icon-7-stroke.ttf",
+		"oF": 0
+		},
+	"\/templates\/classic\/global\/fonts\/stroke\/Pe-icon-7-stroke.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/templates\/classic\/global\/fonts\/stroke\/Pe-icon-7-stroke.woff",
+		"oF": 0
 		},
 	"\/templates\/classic\/global\/fonts\/themify\/themify.css": {
 		"aP": 1,
@@ -4190,6 +4433,7 @@
 	"\/templates\/classic\/global\/portraits\/1.jpg": {
 		"ft": 16384,
 		"iS": 13298,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/global\/portraits\/1.jpg",
 		"oF": 0,
@@ -4200,6 +4444,7 @@
 	"\/templates\/classic\/global\/portraits\/10.jpg": {
 		"ft": 16384,
 		"iS": 12285,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/global\/portraits\/10.jpg",
 		"oF": 0,
@@ -4210,6 +4455,7 @@
 	"\/templates\/classic\/global\/portraits\/11.jpg": {
 		"ft": 16384,
 		"iS": 15289,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/global\/portraits\/11.jpg",
 		"oF": 0,
@@ -4220,6 +4466,7 @@
 	"\/templates\/classic\/global\/portraits\/12.jpg": {
 		"ft": 16384,
 		"iS": 13845,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/global\/portraits\/12.jpg",
 		"oF": 0,
@@ -4230,6 +4477,7 @@
 	"\/templates\/classic\/global\/portraits\/13.jpg": {
 		"ft": 16384,
 		"iS": 13158,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/global\/portraits\/13.jpg",
 		"oF": 0,
@@ -4240,6 +4488,7 @@
 	"\/templates\/classic\/global\/portraits\/14.jpg": {
 		"ft": 16384,
 		"iS": 12813,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/global\/portraits\/14.jpg",
 		"oF": 0,
@@ -4250,6 +4499,7 @@
 	"\/templates\/classic\/global\/portraits\/15.jpg": {
 		"ft": 16384,
 		"iS": 14076,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/global\/portraits\/15.jpg",
 		"oF": 0,
@@ -4260,6 +4510,7 @@
 	"\/templates\/classic\/global\/portraits\/16.jpg": {
 		"ft": 16384,
 		"iS": 13962,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/global\/portraits\/16.jpg",
 		"oF": 0,
@@ -4270,6 +4521,7 @@
 	"\/templates\/classic\/global\/portraits\/17.jpg": {
 		"ft": 16384,
 		"iS": 13495,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/global\/portraits\/17.jpg",
 		"oF": 0,
@@ -4280,6 +4532,7 @@
 	"\/templates\/classic\/global\/portraits\/18.jpg": {
 		"ft": 16384,
 		"iS": 12699,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/global\/portraits\/18.jpg",
 		"oF": 0,
@@ -4290,6 +4543,7 @@
 	"\/templates\/classic\/global\/portraits\/19.jpg": {
 		"ft": 16384,
 		"iS": 14512,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/global\/portraits\/19.jpg",
 		"oF": 0,
@@ -4300,6 +4554,7 @@
 	"\/templates\/classic\/global\/portraits\/2.jpg": {
 		"ft": 16384,
 		"iS": 15592,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/global\/portraits\/2.jpg",
 		"oF": 0,
@@ -4310,6 +4565,7 @@
 	"\/templates\/classic\/global\/portraits\/20.jpg": {
 		"ft": 16384,
 		"iS": 15762,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/global\/portraits\/20.jpg",
 		"oF": 0,
@@ -4320,6 +4576,7 @@
 	"\/templates\/classic\/global\/portraits\/3.jpg": {
 		"ft": 16384,
 		"iS": 13050,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/global\/portraits\/3.jpg",
 		"oF": 0,
@@ -4330,6 +4587,7 @@
 	"\/templates\/classic\/global\/portraits\/4.jpg": {
 		"ft": 16384,
 		"iS": 13832,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/global\/portraits\/4.jpg",
 		"oF": 0,
@@ -4340,6 +4598,7 @@
 	"\/templates\/classic\/global\/portraits\/5.jpg": {
 		"ft": 16384,
 		"iS": 13552,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/global\/portraits\/5.jpg",
 		"oF": 0,
@@ -4350,6 +4609,7 @@
 	"\/templates\/classic\/global\/portraits\/6.jpg": {
 		"ft": 16384,
 		"iS": 13140,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/global\/portraits\/6.jpg",
 		"oF": 0,
@@ -4360,6 +4620,7 @@
 	"\/templates\/classic\/global\/portraits\/7.jpg": {
 		"ft": 16384,
 		"iS": 12951,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/global\/portraits\/7.jpg",
 		"oF": 0,
@@ -4370,6 +4631,7 @@
 	"\/templates\/classic\/global\/portraits\/8.jpg": {
 		"ft": 16384,
 		"iS": 13800,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/global\/portraits\/8.jpg",
 		"oF": 0,
@@ -4380,11 +4642,23 @@
 	"\/templates\/classic\/global\/portraits\/9.jpg": {
 		"ft": 16384,
 		"iS": 12472,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/global\/portraits\/9.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
+		"q": 100
+		},
+	"\/templates\/classic\/global\/portraits\/avatar.png": {
+		"ft": 32768,
+		"iS": 22149,
+		"oA": 0,
+		"oAP": "\/templates\/classic\/global\/portraits\/avatar.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/templates\/classic\/global\/src\/es\/Base.js": {
@@ -44967,6 +45241,7 @@
 	"\/templates\/classic\/topbar\/assets\/examples\/images\/coming-soon.jpg": {
 		"ft": 16384,
 		"iS": 380461,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/topbar\/assets\/examples\/images\/coming-soon.jpg",
 		"oF": 0,
@@ -45043,6 +45318,7 @@
 	"\/templates\/classic\/topbar\/assets\/examples\/images\/dashboard-header.jpg": {
 		"ft": 16384,
 		"iS": 109073,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/topbar\/assets\/examples\/images\/dashboard-header.jpg",
 		"oF": 0,
@@ -45053,6 +45329,7 @@
 	"\/templates\/classic\/topbar\/assets\/examples\/images\/dashboard2-header.jpg": {
 		"ft": 16384,
 		"iS": 71041,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/topbar\/assets\/examples\/images\/dashboard2-header.jpg",
 		"oF": 0,
@@ -45092,6 +45369,7 @@
 	"\/templates\/classic\/topbar\/assets\/examples\/images\/lockscreen.jpg": {
 		"ft": 16384,
 		"iS": 177850,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/topbar\/assets\/examples\/images\/lockscreen.jpg",
 		"oF": 0,
@@ -45102,6 +45380,7 @@
 	"\/templates\/classic\/topbar\/assets\/examples\/images\/login.jpg": {
 		"ft": 16384,
 		"iS": 145042,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/topbar\/assets\/examples\/images\/login.jpg",
 		"oF": 0,
@@ -45266,6 +45545,7 @@
 	"\/templates\/classic\/topbar\/assets\/examples\/images\/poster.jpg": {
 		"ft": 16384,
 		"iS": 174832,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/templates\/classic\/topbar\/assets\/examples\/images\/poster.jpg",
 		"oF": 0,
@@ -47477,9 +47757,10 @@
 	},
 "projectAttributes": {
 	"creationDate": 541439637,
-	"displayValue": "webAssets",
-	"displayValueWasSetByUser": 0,
-	"iconImageName": "brackets_orange"
+	"displayValue": "template yii2",
+	"displayValueWasSetByUser": 1,
+	"iconImageName": "\/templates\/classic\/topbar\/assets\/images\/apple-touch-icon.png",
+	"iconImageWasSetByUser": 0
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -47487,6 +47768,7 @@
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
+	"autoprefixerEnableIEGrid": 0,
 	"babelAuxiliaryCommentAfter": "",
 	"babelAuxiliaryCommentBefore": "",
 	"babelConfigFileHandlingType": 0,
@@ -49281,6 +49563,7 @@
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
+		"outputFormat": 0,
 		"quality": 100
 		},
 	"languageDefaultsJS": {

@@ -7,6 +7,18 @@ class Calendario
 {
 
     /**
+	 * Obtenemos la fecha actual para guardarla en la base de datos
+	 *
+	 * @return string
+	 */
+	public static function getFechaActual() {
+		
+		// Inicializamos la fecha y hora actual
+		$fecha = date ( 'Y-m-d H:i:s', time () );
+		return $fecha;
+	}
+
+    /**
      * Regresa el nombre del día
      * @param string $string
      * @return string

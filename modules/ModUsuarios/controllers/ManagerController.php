@@ -14,6 +14,7 @@ use app\modules\ModUsuarios\models\EntUsuariosFacebook;
 use yii\web\Response;
 use yii\widgets\ActiveForm;
 use yii\filters\AccessControl;
+use app\config\FireBase;
 
 /**
  * Default controller for the `musuarios` module
@@ -90,9 +91,18 @@ class ManagerController extends Controller {
 			
 			// return $this->redirect(['view', 'id' => $model->id_usuario]);
 		}
+
+		if(FireBase::ENABLED){
+			// return $this->render ( '//firebase/sign-up', [ 
+			// 	'model' => $model 
+			// ] );
+		}else{
+			
+		}
 		return $this->render ( 'signUp', [ 
-				'model' => $model 
+			'model' => $model 
 		] );
+		
 	}
 	
 	/**
@@ -118,6 +128,8 @@ class ManagerController extends Controller {
 			
 			// Envio de correo electronico
 			$utils->sendEmailRecuperarPassword ($user->txt_email, $parametrosEmail );
+
+			Yii::$app->session->setFlash('success', "Se ha mandado un correo electrónico a: ".$user->txt_email." con instrucciones para recuperar su contraseña");
 		}
 		return $this->render ( 'peticionPass', [ 
 				'model' => $model 
