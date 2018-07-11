@@ -11,7 +11,7 @@ use yii\helpers\Url;
           <li class="site-menu-category">General</li>
           <li class="dropdown site-menu-item has-sub">
             <a data-toggle="dropdown" href="javascript:void(0)" data-dropdown-toggle="false">
-              <i class="site-menu-icon wb-stats-bars" aria-hidden="true"></i>
+              <i class="site-menu-icon fa-users" aria-hidden="true"></i>
               <span class="site-menu-title">Usuarios web</span>
               <span class="site-menu-arrow"></span>
             </a>
