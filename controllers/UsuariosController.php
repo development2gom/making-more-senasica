@@ -104,7 +104,7 @@ class UsuariosController extends Controller
     public function actionCreate()
     {
         $usuario = EntUsuarios::getUsuarioLogueado();
-
+        
         $auth = Yii::$app->authManager;
 
         $hijos = $auth->getChildRoles($usuario->txt_auth_item);
@@ -113,6 +113,7 @@ class UsuariosController extends Controller
         
 
         $model = new EntUsuarios();
+
         $model->scenario='create';
        
 
@@ -126,6 +127,7 @@ class UsuariosController extends Controller
            
             $model->repeatPassword = $model->password;
             //$model->txt_auth_item = $_POST['EntUsuarios']['txt_auth_item'];
+            
 
             if ($user = $model->signup()) {
 
