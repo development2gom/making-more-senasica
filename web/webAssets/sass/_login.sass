@@ -16,14 +16,14 @@ body.login-page
 				align-items: center
 				display: flex
 				flex-direction: column
-				@extend .fs-15
+				@extend .fs-16
 				justify-content: center
 				span
-					color: $white
+					color: $font-color
 					display: block
 					@extend .fs-16
 				a
-					@extend .fs-15
+					@extend .fs-18
 	form
 		margin: 32px 0 16px
 
@@ -43,20 +43,22 @@ body.login-page
 		margin-top: 12px
 		text-align: right 
 		a
-			@extend .fs-15
-
-	&.necesito-cuenta
-		color: rgba($white,.85)
-		justify-content: center
-		margin-top: 16px
-		a
-			@extend .fs-16
+			@extend .fs-18
 
 	&.olvide-contrasena,
 	&.necesito-cuenta
 		display: flex
 		a
 			margin-left: 0
+
+	&.necesito-cuenta
+		align-items: center
+		color: $font-color
+		justify-content: center
+		margin-top: 16px
+		a
+			@extend .fs-18
+			margin-left: 8px
 
 
 // Form material
@@ -77,7 +79,12 @@ body.login-page
 	// background-color: red
 	.panel
 		background-color: transparent
+		box-shadow: none
 		.panel-body
+
+			form.form-login
+				min-width: 320px
+
 			.form-registro
 
 				.form-group-check

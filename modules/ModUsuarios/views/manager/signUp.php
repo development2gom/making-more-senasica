@@ -8,7 +8,7 @@ use yii\helpers\Url;
 /* @var $model app\models\EntUsuarios */
 
 $this->title = 'Registrarse';
-$this->params['classBody'] = "page-login-v3 layout-full login-page";
+$this->params['classBody'] = "layout-full login-page";
 
 $this->registerCssFile(
   '@web/webAssets/css/signUp.css',

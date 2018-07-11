@@ -9,7 +9,7 @@ use yii\bootstrap\ActiveForm;
 use yii\helpers\Url;
 
 $this->title = 'Login';
-$this->params['classBody'] = "page-login-v3 layout-full login-page";
+$this->params['classBody'] = "layout-full login-page";
 
 ?>
 
@@ -28,16 +28,9 @@ $this->params['classBody'] = "page-login-v3 layout-full login-page";
 		'id' => 'form-ajax',
 		'enableAjaxValidation' => true,
 		'enableClientValidation' => true,
-		'fieldConfig' => [
-			"template" => "{input}{label}{error}",
-			"options" => [
-				"class" => "form-group form-material floating",
-				"data-plugin" => "formMaterial"
-			],
-			"labelOptions" => [
-				"class" => "floating-label"
-			]
-		]
+		'options'=>[
+			"class"=>"form-login",
+		],
 	]);
 	?>
 

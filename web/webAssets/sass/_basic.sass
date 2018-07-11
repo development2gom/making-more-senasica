@@ -16,13 +16,13 @@ a
 	color: $link
 	font:
 		family: $f-base
-		size: 16px
+		size: 18px
 	text-decoration: none
 	// +transition(all 0.3s ease-in)
 	&:active,
 	&:focus,
 	&:hover
-		color: darken($link , 10% )
+		color: lighten($link , 10% )
 		text-decoration: none
 
 h1, h2, h3, h4, h5, h6,
@@ -273,7 +273,15 @@ output
 		color: #888
 
 
-
+label,
+.control-label
+	text-align: left
+	font-size: $fs-18
+	font-weight: $bold
+	display: inline-block
+	margin-bottom: 5px
+	padding-top: 7px
+	width: 100%
 
 /*  Login
 	======================================= */
