@@ -70,6 +70,13 @@ class EntUsuarios extends \yii\db\ActiveRecord implements IdentityInterface
 				'message' => 'Los email deben coincidir'
 			],
 
+			
+				// checks if "username" starts with a letter and contains only word characters
+			['txt_rfc', 'match', 'pattern' => '/^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$/', "message"=>"RFC no válido"],
+			
+			['txt_curp', 'match', 'pattern' => '/^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0\d|1[0-2])(?:[0-2]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$/', "message"=>"RFC no válido"],
+			
+
 			[
 				[
 					'password',
@@ -279,7 +286,13 @@ class EntUsuarios extends \yii\db\ActiveRecord implements IdentityInterface
 			'fch_actualizacion' => 'Fch Actualizacion',
 			'id_status' => 'Status',
 			'repeatEmail' => 'Repetir email',
-			'password' => 'Contraseña'
+			'password' => 'Contraseña',
+			"txt_rfc"=>"RFC",
+			"txt_curp"=>"CURP",
+			"id_area"=>"Area",
+			"id_oisa"=>"OISA",
+			"txt_conmutador"=>"Conmutador",
+			"txt_extension_numero_local"=>"Extensión o número local"
 		];
 	}
 
