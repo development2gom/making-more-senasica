@@ -130,6 +130,7 @@ class UsuariosSearch extends EntUsuarios
      */
     public function searchByType($params)
     {
+        
         $query = EntUsuarios::find()->leftJoin("auth_item", "auth_item.name= mod_usuarios_ent_usuarios.txt_auth_item");
         // add conditions that should always apply here
 
@@ -169,8 +170,17 @@ class UsuariosSearch extends EntUsuarios
             'fch_creacion' => $this->fch_creacion,
             'fch_actualizacion' => $this->fch_actualizacion,
             'id_status' => $this->id_status,
+        ]);
+
+        // grid filtering conditions
+        $query->andFilterWhere([
+            'id_usuario' => $this->id_usuario,
+            'fch_creacion' => $this->fch_creacion,
+            'fch_actualizacion' => $this->fch_actualizacion,
+            'id_status' => $this->id_status,
             'txt_auth_item'=>$this->txt_auth_item
         ]);
+
 
         $query->andFilterWhere(['like', 'txt_token', $this->txt_token])
             ->andFilterWhere(['like', 'txt_imagen', $this->txt_imagen])

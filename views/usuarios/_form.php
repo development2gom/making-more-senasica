@@ -9,6 +9,11 @@ use yii\web\View;
 use app\models\ConstantesWeb;
 use app\modules\ModUsuarios\models\EntUsuarios;
 use app\models\AuthItem;
+use app\models\CatAreas;
+use app\models\CatOisas;
+
+$areas = CatAreas::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")->all();
+$oisas = CatOisas::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")->all();
 
 ?>
 
@@ -20,14 +25,14 @@ use app\models\AuthItem;
 ]); ?>
 
 <div class="row">
-    <div class="col-md-4">
-        <!-- <div class="user-file">
+    <!-- <div class="col-md-4">
+        <div class="user-file">
             <a class="user-file-a js-img-avatar">
                 <img class="js-image-preview" src="<?= Url::base() . "/webAssets/images/site/user.png" ?>">
             </a>
-        </div> -->
-    </div>
-    <div class="col-md-8">
+        </div> 
+    </div>-->
+    <div class="col-md-12">
 
         <?php $form->field($model, 'image')->fileInput(["class" => "hidden-xxl-down"])->label(false) ?> 
 
@@ -54,11 +59,60 @@ use app\models\AuthItem;
         </div>
         
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <?= $form->field($model, 'txt_username')->textInput(['maxlength' => true, 'placeholder' => 'Nombre'])->label(false) ?>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <?= $form->field($model, 'txt_apellido_paterno')->textInput(['maxlength' => true, 'placeholder' => 'Apellido paterno'])->label(false) ?>
+            </div>
+            <div class="col-md-4">
+                <?= $form->field($model, 'txt_apellido_materno')->textInput(['maxlength' => true, 'placeholder' => 'Apellido paterno'])->label(false) ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <?= $form->field($model, 'txt_clave_tea')->textInput(['maxlength' => true, 'placeholder' => 'Clave TEA'])->label(false) ?>
+            </div>
+            <div class="col-md-4">
+                <?= $form->field($model, 'txt_curp')->textInput(['maxlength' => true, 'placeholder' => 'CURP'])->label(false) ?>
+            </div>
+            <div class="col-md-4">
+                <?= $form->field($model, 'txt_rfc')->textInput(['maxlength' => true, 'placeholder' => 'RFC'])->label(false) ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <?= $form->field($model, 'txt_conmutador')->textInput(['maxlength' => true, 'placeholder' => 'Conmutador'])->label(false) ?>
+            </div>
+            <div class="col-md-4">
+                <?= $form->field($model, 'txt_extension_numero_local')->textInput(['maxlength' => true, 'placeholder' => 'Extensión o Número local'])->label(false) ?>
+            </div>
+           
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                
+                <?= $form->field($model, 'id_area')
+                    ->widget(Select2::classname(), [
+                        'data' => ArrayHelper::map($areas, 'id_area', 'txt_nombre'),
+                        'language' => 'es',
+                        'options' => ['placeholder' => 'Seleccionar area'],
+                        'pluginOptions' => [
+                            'allowClear' => true
+                        ],
+                    ])->label(false);
+                ?> 
+            </div>
+            <div class="col-md-6">
+            <?= $form->field($model, 'id_oisa')
+                    ->widget(Select2::classname(), [
+                        'data' => ArrayHelper::map($oisas, 'id_oisas', 'txt_nombre'),
+                        'language' => 'es',
+                        'options' => ['placeholder' => 'Seleccionar oisa'],
+                        'pluginOptions' => [
+                            'allowClear' => true
+                        ],
+                    ])->label(false);?>
             </div>
         </div>
         

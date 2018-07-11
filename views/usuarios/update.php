@@ -41,7 +41,7 @@ $this->registerCssFile(
         <?= $this->render('_form', [
           'model' => $model,
           'roles' => $roles,
-          'supervisores' => $supervisores
+          
         ]) ?>
     </div>
 </div>

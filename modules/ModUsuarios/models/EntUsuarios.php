@@ -42,7 +42,7 @@ class EntUsuarios extends \yii\db\ActiveRecord implements IdentityInterface
 	const STATUS_ACTIVED = 2;
 	const STATUS_BLOCKED = 3;
 	const USUARIO_REGISTRADO = "usuario-normal";
-	public $password;
+	
 	public $repeatPassword;
 	public $repeat;
 	public $repeatEmail;
@@ -85,7 +85,12 @@ class EntUsuarios extends \yii\db\ActiveRecord implements IdentityInterface
 					'txt_apellido_paterno',
 					'txt_email',
 					'txt_auth_item',
-					'password'
+					'password',
+					"id_area",
+					'id_oisa',
+					"txt_curp",
+					"txt_rfc",
+					"txt_clave_tea"
 				],
 				'required',
 
@@ -534,6 +539,7 @@ class EntUsuarios extends \yii\db\ActiveRecord implements IdentityInterface
 		if ($this->save()) {
 
 			$this->guardarRoleUsuario();
+//			$this->enviarEmailBienvenida()
 
 			return true;
 		} else {

@@ -42,15 +42,11 @@ class UsuariosController extends Controller
                 // ],
                 
                 'rules' => [
-                    [
-                        'actions' => ['testremover', 'delete', 'importardata','asignarusuario','removerusuario','test','cambiarpass'],
-                        'allow' => true,
-                        'roles' => ["@"],
-                    ],
+                   
                     [
                         'actions' => ['index', 'create', 'update', 'view', 'activar-usuario', 'bloquear-usuario'],
                         'allow' => true,
-                        'roles' => ["super-admin"],
+                        'roles' => ["admin", "oficial"],
                     ],
                 ],
             ]
@@ -114,8 +110,7 @@ class UsuariosController extends Controller
         $hijos = $auth->getChildRoles($usuario->txt_auth_item);
         ksort($hijos);
         $roles = AuthItem::find()->where(['in', 'name', array_keys($hijos)])->orderBy("description")->all();
-
-        $supervisores = EntUsuarios::find()->where(['txt_auth_item'=>ConstantesWeb::SUPER_ADMIN])->orderBy("txt_username, txt_apellido_paterno")->all();
+        
 
         $model = new EntUsuarios();
         $model->scenario='create';
@@ -130,7 +125,7 @@ class UsuariosController extends Controller
         if ($model->load(Yii::$app->request->post())) { //print_r($_POST['EntUsuarios']['txt_auth_item']);exit;
            
             $model->repeatPassword = $model->password;
-            $model->txt_auth_item = $_POST['EntUsuarios']['txt_auth_item'];
+            //$model->txt_auth_item = $_POST['EntUsuarios']['txt_auth_item'];
 
             if ($user = $model->signup()) {
 
@@ -147,7 +142,6 @@ class UsuariosController extends Controller
         return $this->render('create', [
             'model' => $model,
             'roles'=>$roles,
-            'supervisores'=>$supervisores
         ]);
     }
 
