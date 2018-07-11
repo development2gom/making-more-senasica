@@ -229,6 +229,23 @@ class EntUsuarios extends \yii\db\ActiveRecord implements IdentityInterface
 			],
 			[
 				[
+					'txt_curp'
+				],
+				'string',
+				'max' => 18,
+				'message' => 'La curp no cuenta con los 18 caracteres'
+			],
+			[
+				[
+					'txt_rfc'
+				],
+				'string', 'max' => 13, 'min' => 12, 
+				'tooLong' => 'El campo no debe superar 13 dígitos', 
+				'tooShort' => 'El campo debe ser mínimo de 12 digítos'
+
+			],
+			[
+				[
 					'txt_auth_key'
 				],
 				'string',
