@@ -6,17 +6,7 @@ use Yii;
 
 class Utils {
 	
-	/**
-	 * Obtenemos la fecha actual para almacenarla
-	 *
-	 * @return string
-	 */
-	public static function getFechaActual() {
-		
-		// Inicializamos la fecha y hora actual
-		$fecha = date ( 'Y-m-d H:i:s', time () );
-		return $fecha;
-	}
+	
 	
 	/**
 	 * Genera un token para guardarlo en la base de datos

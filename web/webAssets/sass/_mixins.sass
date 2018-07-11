@@ -55,6 +55,9 @@
 	@else if $media == sp
 		@media screen and (max-width: $screen-sp)
 			@content
+	@else if $media == res
+		@media only screen and #{$retina}
+			@content
 
 
 //

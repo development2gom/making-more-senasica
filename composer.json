@@ -23,7 +23,8 @@
         "kartik-v/yii2-grid": "@dev",
         "kartik-v/yii2-mpdf": "*",
         "johnitvn/yii2-ajaxcrud": "*",
-        "kartik-v/yii2-export": "*"
+        "kartik-v/yii2-export": "*",
+        "consik/yii2-websocket": "^1.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

@@ -4,6 +4,7 @@ namespace app\modules\ModUsuarios\models;
 
 use Yii;
 use app\modules\ModUsuarios\models\Utils;
+use app\models\Calendario;
 
 /**
  * This is the model class for table "ent_usuarios_cambio_pass".
@@ -78,7 +79,7 @@ class EntUsuariosCambioPass extends \yii\db\ActiveRecord
      * @return EntUsuariosCambioPass | null
      */
     public function saveUsuarioPeticion($idUsuario){
-    	$this->fch_creacion = Utils::getFechaActual();
+    	$this->fch_creacion = Calendario::getFechaActual();
     	$this->fch_finalizacion = Utils::getFechaVencimiento($this->fch_creacion);
     	$this->txt_ip = Yii::$app->getRequest()->getUserIP();
     	$this->txt_token = Utils::generateToken('sol');
@@ -95,7 +96,7 @@ class EntUsuariosCambioPass extends \yii\db\ActiveRecord
     public function updateUsuarioPeticion(){
     	$this->b_usado = 1;
     	$this->txt_ip_cambio = Yii::$app->getRequest()->getUserIP();
-    	$this->fch_peticion_usada = Utils::getFechaActual();
+    	$this->fch_peticion_usada = Calendario::getFechaActual();
     	return $this->save()?$this:null;
     }
     
@@ -106,13 +107,13 @@ class EntUsuariosCambioPass extends \yii\db\ActiveRecord
      * @param string $t
      * @return NULL | EntUsuariosCambioPass
      */
-    public function getPeticionByToken($t){
+    public static function getPeticionByToken($t){
     	
     	$params = [':t'=>$t];
     	$where = 'txt_token=:t AND b_usado=1';
     	
     	if(Yii::$app->params ['modUsuarios'] ['recueperarPass'] ['diasValidos']){
-    		$fechaActual = Utils::getFechaActual();
+    		$fechaActual = Calendario::getFechaActual();
     		$where = 'txt_token=:t AND fch_finalizacion >=:fchActual AND b_usado=0';
     		$params[':fchActual'] = $fechaActual;
     	}
