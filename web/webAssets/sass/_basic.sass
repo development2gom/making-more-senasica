@@ -5,7 +5,6 @@
 	*/
 
 body
-	background-color: #eee
 	background-color: #f5f5f5
 	font:
 		family: $f-base
@@ -25,6 +24,32 @@ a
 	&:hover
 		color: darken($link , 10% )
 		text-decoration: none
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6
+	font-family: inherit
+	font-weight: $semi
+	text-shadow: none
+	line-height: 1.1
+	color: inherit
+
+h1, .h1
+	font-size: 54px
+
+h2, .h2
+	font-size: 38px
+
+h3, .h3
+	font-size: 28px
+
+h4, .h4
+	font-size: 24px
+
+h5, .h5
+	font-size: 18px
+
+h6, .h6
+	font-size: 16px
 
 /*  Btn
 	================================================ */
@@ -67,163 +92,26 @@ a
 	-ms-user-select: none
 	user-select: none
 	border: 1px solid transparent
-	padding: .375rem .75rem
+	padding: 10px 25px
 	line-height: 1.5
-	font-size: $fs-16
-	font-weight: $regular
+	font-size: $fs-18
+	font-weight: $light
 	letter-spacing: 1px
-	border-radius: .25rem
+	border-radius: 3px
 	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
 
-.btn-primary
-	border-color: $primary
-	background-color: $primary
-	&:active,
-	&:focus,
-	&:hover,
-	&:active,
-	&:active:focus,
-	&:active:hover,
-	&:disabled,
-	&[disabled]:hover,
-	&[disabled]:focus,
-	&:hover,
-	&:focus,
-	&:not(:disabled):not(.disabled):active,
-	&:not(:disabled):not(.disabled).active
-		border-color: darken( $primary, 10% )
-		background-color: darken( $primary, 10% )
-		box-shadow: 0 0 0 0.1rem rgba($primary,0.1)
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn
+	cursor: not-allowed
+	opacity: .65
+	filter: alpha(opacity=65)
+	box-shadow: none
 
 .btn-secondary
-	border-color: $secondary
-	background-color: $secondary
-	&:active,
-	&:focus,
-	&:hover,
-	&:active,
-	&:active:focus,
-	&:active:hover,
-	&:disabled,
-	&[disabled]:hover,
-	&[disabled]:focus,
-	&:hover,
-	&:focus
-		border-color: darken( $secondary, 10% )
-		background-color: darken( $secondary, 10% )
-		box-shadow: 0 0 0 0.1rem rgba($secondary,0.1)
-
-.btn-outline-primary
-	border-color: $grey-d
-	color: $grey-d
-	&:active,
-	&:focus,
-	&:hover,
-	&:active,
-	&:active:focus,
-	&:active:hover,
-	&:disabled,
-	&[disabled]:hover,
-	&[disabled]:focus,
-	&:hover,
-	&:focus
-		box-shadow: 0 0 0 0.1rem rgba($primary,0.1)
-
-.btn-facebook
-	border-color: $facebook
-	background-color: $facebook
-	&:active,
-	&:focus,
-	&:hover,
-	&:active,
-	&:active:focus,
-	&:active:hover,
-	&:disabled,
-	&[disabled]:hover,
-	&[disabled]:focus,
-	&:hover,
-	&:focus,
-	&:not(:disabled):not(.disabled):active,
-	&:not(:disabled):not(.disabled).active
-		border-color: darken( $facebook, 10% )
-		background-color: darken( $facebook, 10% )
-		box-shadow: none
-
-.btn-warning
-	border-color: $accent
-	background-color: $accent
-	&:active,
-	&:focus,
-	&:hover,
-	&:active,
-	&:active:focus,
-	&:active:hover,
-	&:disabled,
-	&[disabled]:hover,
-	&[disabled]:focus,
-	&:hover,
-	&:focus
-		border-color: darken( $accent, 10% )
-		background-color: darken( $accent, 10% )
-		box-shadow: 0 0 0 0.1rem rgba($accent,0.1)
-
-.btn-error
-	border-color: $error
-	background-color: $error
-	&:active,
-	&:focus,
-	&:hover,
-	&:active,
-	&:active:focus,
-	&:active:hover,
-	&:disabled,
-	&[disabled]:hover,
-	&[disabled]:focus,
-	&:hover,
-	&:focus
-		border-color: darken( $error, 10% )
-		background-color: darken( $error, 10% )
-		box-shadow: 0 0 0 0.1rem rgba($error,0.1)
-
-.btn-success
-	border-color: $success
-	background-color: $success
-	&:active,
-	&:focus,
-	&:hover,
-	&:active,
-	&:active:focus,
-	&:active:hover,
-	&:disabled,
-	&[disabled]:hover,
-	&[disabled]:focus,
-	&:hover,
-	&:focus
-		border-color: darken( $success, 10% )
-		background-color: darken( $success, 10% )
-		box-shadow: 0 0 0 0.1rem rgba($success,0.1)
-
-.btn-info
-	border-color: $info
-	background-color: $info
-	&:active,
-	&:focus,
-	&:hover,
-	&:active,
-	&:active:focus,
-	&:active:hover,
-	&:disabled,
-	&[disabled]:hover,
-	&[disabled]:focus,
-	&:hover,
-	&:focus
-		border-color: darken( $info, 10% )
-		background-color: darken( $info, 10% )
-		box-shadow: 0 0 0 0.1rem rgba($info,0.1)
-
-.btn-outline-default
-	background-color: transparent
-	border-color: $font-color
+	background-color: $white
+	border-color: #777
+	box-shadow: 0 2px 0 0 #444
 	color: $font-color
 	&:active,
 	&:focus,
@@ -235,10 +123,64 @@ a
 	&[disabled]:hover,
 	&[disabled]:focus,
 	&:hover,
+	&:focus,
+	&:not(:disabled):not(.disabled):active,
+	&:not(:disabled):not(.disabled).active
+		background-color: #e6e6e6
+		border-color: darken( #8c8c8c, 10% )
+		box-shadow: 0 2px 0 0 #444
+		color: $font-color
+	&:active,
+	&.active
+		box-shadow: inset 0 3px 5px rgba($black,.125)
+
+.btn-primary
+	background-color: $c-secondary
+	border-color: $c-secondary
+	box-shadow: 0 2px 0 0 darken( $c-secondary, 30% )
+	color: $white
+	&:active,
+	&:focus,
+	&:hover,
+	&:active,
+	&:active:focus,
+	&:active:hover,
+	&:disabled,
+	&[disabled]:hover,
+	&[disabled]:focus,
+	&:hover,
 	&:focus
-		border-color: darken( $font-color, 10% )
-		color: darken( $font-color, 10% )
-		box-shadow: none
+		background-color: darken( $c-secondary, 7% )
+		border-color: darken( $c-secondary, 10% )
+		box-shadow: 0 2px 0 0 darken( $c-secondary, 25% )
+		color: $white
+	&:active,
+	&.active
+		box-shadow: inset 0 3px 5px rgba($black,.125)
+
+.btn-error
+	background-color: $error
+	border-color: $error
+	box-shadow: 0 2px 0 0 darken( $error, 30% )
+	color: $white
+	&:active,
+	&:focus,
+	&:hover,
+	&:active,
+	&:active:focus,
+	&:active:hover,
+	&:disabled,
+	&[disabled]:hover,
+	&[disabled]:focus,
+	&:hover,
+	&:focus
+		background-color: darken( $error, 7% )
+		border-color: darken( $error, 10% )
+		box-shadow: 0 2px 0 0 darken( $error, 25% )
+		color: $white
+	&:active,
+	&.active
+		box-shadow: inset 0 3px 5px rgba($black,.125)
 
 /*  Label
 	======================================= */
@@ -303,7 +245,36 @@ a
 
 .form-control
 	color: lighten($font-color, 25%)
+
+.form-control
+	width: 100%
+	height: 39px
+	padding: 6px 12px
+	background-color: $white
+	border: 1px solid #ccc
+	border-radius: 4px
+	box-shadow: inset 0 1px 1px rgba($black,.075)
+	-webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s
+	&:active,
+	&:focus
+		border-color: #66afe9
+		outline: 0
+		box-shadow: inset 0 1px 1px rgba($black,.075),0 0 8px rgba($accent,.6)
 	
+.form-control,
+output
+	font-size: $fs-18
+	font-weight: $light
+	line-height: 1.428571429
+	color: #555
+	display: block
+	+placeholder
+		color: #888
+
+
+
+
 /*  Login
 	======================================= */
 /* Imagen de fondo */
@@ -328,6 +299,10 @@ a
 				color: $error
 				font-size: .9rem
 				text-align: left
+
+// Body
+body.site-navbar-small
+	padding-top: 4.6rem
 
 /*  Header
 	======================================= */

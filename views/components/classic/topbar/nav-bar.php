@@ -42,22 +42,25 @@ role="navigation">
       <!-- End Navbar Toolbar -->
       <!-- Navbar Toolbar Right -->
       <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
-        
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+
         <li class="nav-item dropdown">
-          <a class="nav-link navbar-avatar" data-toggle="dropdown" href="#" aria-expanded="false"
-          data-animation="scale-up" role="button">
-            <span class="mr-10">
-              <?=$usuario->nombreCorto?>
-            </span>
-            <span class="avatar avatar-online">
-              <img src="<?=Url::base()?>/webAssets/templates/classic/global/portraits/avatar.png" alt="...">
-              <i></i>
-            </span>
-          </a>
-          <div class="dropdown-menu" role="menu">
-            <a class="dropdown-item" href="<?=Url::base()?>/site/logout" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Logout</a>
+          <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="fade" role="button">Mega <i class="icon wb-chevron-down-mini" aria-hidden="true"></i></a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="exampleAlignmentDropdown" role="menu">
+            <a class="dropdown-item" href="javascript:void(0)" role="menuitem">Action</a>
+            <a class="dropdown-item" href="javascript:void(0)" role="menuitem">Another action</a>
+            <a class="dropdown-item" href="javascript:void(0)" role="menuitem">Something else here</a>
+            <a class="dropdown-item" href="javascript:void(0)" role="menuitem">Separated link</a>
           </div>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="<?=Url::base()?>/site/logout"><i class="icon wb-power" aria-hidden="true"></i> Logout</a>
+        </li>
+        
       </ul>
       <!-- End Navbar Toolbar Right -->
     </div>
