@@ -4,7 +4,7 @@ use yii\bootstrap\ActiveForm;
 use yii\helpers\Url;
 
 $this->title = 'Recuperar contraseña';
-$this->params['classBody'] = "page-login-v3 layout-full login-page";
+$this->params['classBody'] = "layout-full login-page";
 ?>
 <div class="panel">
 	<div class="panel-body">
@@ -21,16 +21,11 @@ $this->params['classBody'] = "page-login-v3 layout-full login-page";
 		<?php 
 		$form = ActiveForm::begin([
 			'id' => 'login-form',
-			'fieldConfig' => [
-				"template" => "{input}{label}{error}",
-				"options" => [
-					"class" => "form-group form-material floating",
-					"data-plugin" => "formMaterial"
-				],
-				"labelOptions" => [
-					"class" => "floating-label"
-				]
-			]
+			'enableAjaxValidation' => true,
+			'enableClientValidation' => true,
+			'options'=>[
+				"class"=>"form-login",
+			],
 		]); 
 		?>
 

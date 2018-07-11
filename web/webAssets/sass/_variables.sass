@@ -10,24 +10,36 @@
 //	-----------------------------------------------------------------------------
 //
 
+
+$c-black-0: #000000
+$c-black-2: #272829
+$c-black-3: #393C3E
+$c-black-5: #545454
+$c-grey-d: #DDDDDD
+$c-white-f6: #F6F6F6
+$c-white: #FFFFFF
+$c-red: #D0021B
+$c-blue: #4D92DF
+$c-secondary: #4A90E2
+
 //
 // Colores
 //
-$white: #FFF
-$black: #000
+$white: $c-white
+$black: $c-black-0
 
-$primary: #F2B3C4
-$secondary: #FE9093
-$accent: $white
+$primary: $c-black-0
+$secondary: $c-red
+$accent: $c-blue
 
 $success: #39b54a
-$error: #ff5a5f
+$error: #D75452
 $warning: #fef7c3
 $info: $primary
 
-$facebook: #3b5998
+$facebook: $c-blue
 
-$link: $primary
+$link: #12C
 
 $grey-f5: #f5f5f5
 $grey-e: #EEE
@@ -53,8 +65,9 @@ $bg-trans: transparent
 //
 // Tipografía
 //
-$f-base: 'Open Sans',-apple-system,Helvetica Neue,Helvetica,Arial,sans-serif
-$font-color: #3F3E4C
+$f-base: "Open Sans",-apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif
+
+$font-color: #545454
 
 $fc-dark: darken( $font-color, 90% )
 $fc-medium: darken( $font-color, 50% )
@@ -109,3 +122,5 @@ $screen-tx: 576px
 $screen-sl: 480px
 $screen-sp: 320px
 $retina: "(-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-devicepixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx)"
+
+

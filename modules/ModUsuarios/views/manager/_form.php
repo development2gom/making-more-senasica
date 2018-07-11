@@ -14,16 +14,9 @@ $form = ActiveForm::begin([
     'id' => 'form-ajax',
     'enableAjaxValidation' => true,
     'enableClientValidation' => true,
-    'fieldConfig' => [
-        "template" => "{input}{label}{error}",
-        "options" => [
-            "class" => "form-group form-material floating",
-            "data-plugin" => "formMaterial"
-        ],
-        "labelOptions" => [
-            "class" => "floating-label"
-        ]
-    ]
+    'options'=>[
+        "class"=>"form-login",
+    ],
 ]);?>
 
     <?= $form->field($model, 'image')->fileInput(["class"=>"hide"])->label(false) ?> 
