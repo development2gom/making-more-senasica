@@ -76,8 +76,7 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionIndex()
-    {
+    public function actionIndex(){
         
         // $usuario = Yii::$app->user->identity;
         // $auth = \Yii::$app->authManager;
@@ -91,8 +90,7 @@ class SiteController extends Controller
      *
      * @return Response
      */
-    public function actionLogout()
-    {
+    public function actionLogout(){
         Yii::$app->user->logout();
 
         return $this->goHome();
