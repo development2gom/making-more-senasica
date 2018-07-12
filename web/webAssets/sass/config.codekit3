@@ -196,19 +196,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/_basicBK.sass": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 2,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/_basicBK.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"\/_components.sass": {
 		"aP": 0,
 		"bl": 0,
@@ -244,58 +231,6 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/_footer.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"\/_ionicons-font.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/_ionicons-font.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"\/_ionicons-icons.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/_ionicons-icons.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"\/_ionicons-variables.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/_ionicons-variables.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"\/_ionicons.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/_ionicons.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -365,19 +300,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/_site-styles.sass": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 2,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/_site-styles.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"\/_usuarios.sass": {
 		"aP": 0,
 		"bl": 0,
@@ -404,7 +326,7 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/_variablesBK.sass": {
+	"\/_views.sass": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -412,7 +334,7 @@
 		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/_variablesBK.css",
+		"oAP": "\/_views.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1

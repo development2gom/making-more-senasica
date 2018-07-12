@@ -24,7 +24,7 @@ AppAsset::register($this);
   <?=$this->render("//components/classic/topbar/body", ["content"=>$content])?>
   
 
-  <?=$this->render("//components/classic/topbar/footer")?>
+  <?php # $this->render("//components/classic/topbar/footer")?>
 
   <?php $this->endBody();?>
  

@@ -6,7 +6,8 @@
 
 // ----------- Listados
 
-.usuarios-list
+.usuarios-list,
+.actas-retencion-list
 	// background-color: $white
 	// border-radius: 4px
 	// box-shadow: 0 2px 4px 0 rgba($black,.3)
@@ -22,6 +23,8 @@
 			align-items: center
 			display: flex
 			justify-content: flex-end
+			.btn.btn-primary
+				padding: 8px 25px
 
 	.list-panel
 		background-color: $white
@@ -310,7 +313,7 @@
 								width: 100%
 								label
 									background-color: $white
-									border-color: #777
+									border: 1px solid #777
 									border-radius: 0
 									color: #777
 									@extend .fs-18
