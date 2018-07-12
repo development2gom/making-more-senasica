@@ -12,6 +12,7 @@ use app\models\CatEstados;
 use app\models\CatTiposActas;
 use app\models\CatTiposMercancias;
 use app\models\CatPaises;
+use kartik\date\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\WrkActasRetencionSearch */
@@ -36,6 +37,29 @@ $paises = CatPaises::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")->
             "target"=>"_blank"
         ]
     ]); ?>
+
+    <?php
+                    // Usage with model and Active Form (with no default initial value)
+                    echo DatePicker::widget([
+                        'model' => $model,
+                        'attribute' => 'startDate',
+                        'attribute2' => 'endDate',
+                        'options' => ['placeholder' => 'Fecha inicio', "id"=>"new"],
+                        'options2' => ['placeholder' => 'Fecha final', "id"=>"new2"],
+                        
+                        'type' => DatePicker::TYPE_RANGE,
+                        'form' => $form,
+                        'separator' => '<i class="icon  fa-arrows-h"></i>',
+                        
+                        'pluginOptions' => [
+                            'format' => 'dd-mm-yyyy',
+                            'autoclose' => true,
+                           
+                            'maxViewMode'=>2
+                        ],
+                       ]);
+                   
+                    ?>
 
     <?= $form->field($model, 'id_oficial')
                     ->widget(Select2::classname(), [
