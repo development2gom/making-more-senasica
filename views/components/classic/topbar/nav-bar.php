@@ -20,10 +20,11 @@ role="navigation">
       <i class="icon wb-more-horizontal" aria-hidden="true"></i>
     </button>
     <a class="navbar-brand navbar-brand-center" href="<?=Url::base()?>">
-      <img class="navbar-brand-logo navbar-brand-logo-normal" src="<?=Url::base()?>/webAssets/images/senasica.png"
+      Senasica
+      <!-- <img class="navbar-brand-logo navbar-brand-logo-normal" src="<?=Url::base()?>/webAssets/images/senasica.png"
       title="Remark">
       <img class="navbar-brand-logo navbar-brand-logo-special" src="<?=Url::base()?>/webAssets/images/senasica.png"
-      title="Remark">
+      title="Remark"> -->
       
     </a>
     
