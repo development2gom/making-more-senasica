@@ -8,6 +8,7 @@ use app\models\WrkActasRetencionSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\components\AccessControlExtend;
 
 /**
  * ActasRetencionController implements the CRUD actions for WrkActasRetencion model.
@@ -20,10 +21,22 @@ class ActasRetencionController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControlExtend::className(),
+                'only' => ['logout', 'about'],
+                'rules' => [
+                    [
+                        'actions' => ['logout'],
+                        'allow' => true,
+                        'roles' => ['admin'],
+                    ],
+                   
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['POST'],
+                    'logout' => ['post'],
                 ],
             ],
         ];
@@ -53,6 +66,15 @@ class ActasRetencionController extends Controller
     public function actionView($token)
     {
         return $this->render('view', [
+            'model' => $this->findModel($token),
+        ]);
+    }
+
+    public function actionVerTicket($token){
+
+        $this->layout = "@app/views/layouts/classic/topBar/mainBlank";
+
+        return $this->render('ver-ticket', [
             'model' => $this->findModel($token),
         ]);
     }
