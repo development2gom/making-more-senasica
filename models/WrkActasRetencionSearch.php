@@ -6,6 +6,7 @@ use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\models\WrkActasRetencion;
+use app\modules\ModUsuarios\models\Utils;
 
 /**
  * WrkActasRetencionSearch represents the model behind the search form of `app\models\WrkActasRetencion`.
@@ -65,6 +66,15 @@ class WrkActasRetencionSearch extends WrkActasRetencion
             'id_oficial' => $this->id_oficial,
             'data' => $this->data,
         ]);
+
+        if($this->startDate && $this->endDate){
+            $this->startDate = Utils::changeFormatDateInputShort($this->startDate);
+            $this->endDate = Utils::changeFormatDateInputShort($this->endDate);
+            $query->andFilterWhere([
+                "between", "date_format(txt_fecha, '%Y-%m-%d')", $this->startDate,  $this->endDate
+            
+            ]);
+        }
 
         $query->andFilterWhere(['like', 'uddi', $this->uddi])
             ->andFilterWhere(['like', 'txt_folio', $this->txt_folio])

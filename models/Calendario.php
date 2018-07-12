@@ -268,4 +268,19 @@ class Calendario
 
         return $dayName;
     }
+
+    /**
+     * Regresa yyyy-mm-dd
+     * @param string $string
+     * @return string
+     */
+    public static function cambiarFormatoFecha($string = null)
+    {
+        $tiempo = time();
+        if ($string) {
+            $tiempo = strtotime($string);
+        }
+
+        return $tiempo;
+    }
 }
