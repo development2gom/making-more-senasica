@@ -8,6 +8,11 @@ use app\models\EntOficiales;
 /* @var $searchModel app\models\EntOficialesSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
+$this->registerJsFile(
+  '@web/webAssets/js/oficiales/index.js',
+  ['depends' => [\app\assets\AppAsset::className()]]
+);
+
 $this->title = 'Oficiales';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -57,14 +62,15 @@ $this->params['breadcrumbs'][] = $this->title;
                     
                   return '<div class="btn-groups" data-toggle="buttons" role="group">
                   <label class="btn btn-active '.$activo.'">
-                  <input class="js-activar-usuario" type="radio" name="options" autocomplete="off" value="activar"   data-token="'.$data->uddi.'" />
+                  <input class="js-activar-oficial" type="radio" name="options" autocomplete="off" value="activar"   data-token="'.$data->uddi.'" />
                   Activo
                   </label>
                   <label class="btn btn-inactive '.$inactivo.'">
-                  <input class="js-bloquear-usuario"  type="radio" name="options" autocomplete="off" value="bloquear"  data-token="'.$data->uddi.'" />
+                  <input class="js-bloquear-oficial"  type="radio" name="options" autocomplete="off" value="bloquear"  data-token="'.$data->uddi.'" />
                   Inactivo
                   </label>
                   </div>';
+                 
                 }
               ],
 
@@ -76,11 +82,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format'=>'raw',
               
                 'value'=>function($data){
-                  // return '<a href="'.Url::base().'/usuarios/update/'.$data->id_usuario.'" class="btn btn-outline btn-success btn-sm no-pjax"><i class="icon wb-edit"></i></a>';     
+                       
                   $a = Html::a("<i class='icon wb-pencil' aria-hidden='true'></i>", 
                   ["oficiales/update", 'id'=>$data->id_oficial], 
                   [
-                      "class"=>"btn btn-primary btn-aprobar no-pjax js-confirmar-cita"
+                      "class"=>"btn btn-primary btn-aprobar no-pjax js-confirmar-oficial"
                   ]);
   
                   $contenedor = '<div class="td-actions-tooltip" data-toggle="tooltip" data-original-title="Editar" data-template="<div class=\'tooltip tooltip-2 tooltip-success\' role=\'tooltip\'><div class=\'arrow\'></div><div class=\'tooltip-inner\'></div></div>">

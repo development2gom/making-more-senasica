@@ -10,6 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\modules\ModUsuarios\models\Utils;
 use app\models\Calendario;
+use app\models\ResponseServices;
 
 /**
  * OficialesController implements the CRUD actions for EntOficiales model.
@@ -129,5 +130,46 @@ class OficialesController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    public function actionActivarOficial($uddi = null){
+        $response = new ResponseServices();
+        $oficial = $this->findModel(['uddi'=>$uddi]);
+        if($oficial)
+        {
+            $oficial->b_habilitado=EntOficiales::STATUS_ACTIVED;
+            if($oficial->save())
+            {
+                $response->status='success';
+                $response->message='Oficial activado';
+            }
+            else
+            {
+                $response->status='success';
+                $response->message='No se pudo activar el oficial';
+                $response->result=$oficial->errors;
+            }
+        }
+        return $response;
+    }
+
+    public function actionBloquearOficial($uddi = null){
+        $response = new ResponseServices();
+        $oficial = $this->findModel(['uddi'=>$uddi]);
+        if($oficial)
+        {
+            $oficial->b_habilitado=EntOficiales::STATUS_BLOCKED;
+            if($oficial->save())
+            {
+                $response->status='success';
+                $response->message='Oficial desactivado';
+            }
+            else
+            {
+                $response->status='success';
+                $response->message='No se pudo desactivar al oficial';
+                $response->result=$oficial->errors;
+            }
+        }
     }
 }
