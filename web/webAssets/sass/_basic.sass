@@ -431,7 +431,21 @@ body.site-navbar-small
 				border-top: 1px solid transparent
 				padding: 15px
 
-	
+// Tooltip
+.tooltip
+	.tooltip-inner
+		background-color: $primary
+		@extend .fs-16
+		padding: 4px 10px
+
+
+.tooltip.bs-tether-element-attached-left
+	.tooltip-inner::before
+		border-right-color: $primary
+
+.tooltip.tooltip-right
+	.tooltip-inner::before 
+		border-right-color: $primary
 
 
 // Summary

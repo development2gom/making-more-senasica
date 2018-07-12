@@ -76,6 +76,8 @@ $this->params['classBody'] = "site-navbar-small dashboard";
         <button class="btn btn-default btn-xs">Default Chico</button>
     </div>
 
+    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" data-trigger="hover" data-original-title="Hover to tooltip" title="" aria-describedby="tooltip198811">Tooltip</button>
+
 
     <button class="btn btn-primary" data-target="#modal-example" data-toggle="modal" type="button">Modal</button>
 
