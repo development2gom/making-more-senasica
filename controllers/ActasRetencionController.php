@@ -23,22 +23,17 @@ class ActasRetencionController extends Controller
         return [
             'access' => [
                 'class' => AccessControlExtend::className(),
-                'only' => ['logout', 'about'],
+                'only' => ['delete','update','Create','Create','Index','View'],
                 'rules' => [
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['delete','update','Create','Create','Index','View'],
                         'allow' => true,
-                        'roles' => ['admin'],
+                        'roles' => ['admin','oficial','super-admin','TEA'],
                     ],
                    
                 ],
             ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                ],
-            ],
+            
         ];
     }
 
