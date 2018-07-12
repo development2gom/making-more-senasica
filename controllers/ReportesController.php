@@ -20,7 +20,7 @@ class ReportesController extends Controller{
                 'only' => ['exportar','index'],
                 'rules' => [
                     [
-                        'actions' => ['Exportar','Index'],
+                        'actions' => ['exportar','index'],
                         'allow' => true,
                         'roles' => ['admin','oficial','super-admin','TEA'],
                     ],
