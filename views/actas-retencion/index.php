@@ -64,10 +64,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     'ver' => function($url, $model) {
                         
                         $a = Html::a("<i class='icon wb-pencil' aria-hidden='true'></i>", 
-                        ["actas-retencion/view", 'token'=>$model->uddi], 
+                        ["actas-retencion/view", 'token'=>$model->txt_folio], 
                         [
                             "class"=>"btn btn-success btn-edit no-pjax",
-                            "data-token"=>$model->uddi,
+                            "data-token"=>$model->txt_folio,
                         ]);
 
                         $contenedor = '<div class="td-actions-tooltip" data-toggle="tooltip" data-original-title="Ver" data-template="<div class=\'tooltip tooltip-2 tooltip-success\' role=\'tooltip\'><div class=\'arrow\'></div><div class=\'tooltip-inner\'></div></div>">
