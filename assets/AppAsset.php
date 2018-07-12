@@ -20,12 +20,14 @@ class AppAsset extends AssetBundle
     public $css = [
         'plugins/ladda/ladda.css',
         'css/site-extend.css.map',
-        'css/site-extend.css'
+        'css/site-extend.css',
+        "https://framework-gb.cdn.gob.mx/assets/styles/main.css"
     ];
     public $js = [
         'plugins/ladda/spin.min.js',
         'plugins/ladda/ladda.min.js',
-        'js/geeks.js'
+        'js/geeks.js',
+        "https://framework-gb.cdn.gob.mx/gobmx.js"
 
     ];
     public $depends = [
