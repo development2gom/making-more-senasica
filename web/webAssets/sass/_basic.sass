@@ -14,9 +14,8 @@ body
 
 a
 	color: $link
-	font:
-		family: $f-base
-		size: 18px
+	font-amily: $f-base
+	@extend .fs-18
 	text-decoration: none
 	// +transition(all 0.3s ease-in)
 	&:active,
@@ -99,6 +98,18 @@ h6, .h6
 	letter-spacing: 1px
 	border-radius: 3px
 	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+	&.btn-lg
+		padding: 20px 100px
+	&.btn-sm
+		border-radius: 3px
+		font-size: $fs-14
+		line-height: 1.5
+		padding: 5px 10px
+	&.btn-xs
+		border-radius: 3px
+		font-size: $fs-14
+		line-height: 1.5
+		padding: 1px 5px
 
 .btn.disabled,
 .btn[disabled],
@@ -108,7 +119,7 @@ fieldset[disabled] .btn
 	filter: alpha(opacity=65)
 	box-shadow: none
 
-.btn-secondary
+.btn-default
 	background-color: $white
 	border-color: #777
 	box-shadow: 0 2px 0 0 #444
@@ -131,6 +142,11 @@ fieldset[disabled] .btn
 		box-shadow: 0 2px 0 0 #444
 		color: $font-color
 	&:active,
+	&:active,
+	&:active:focus,
+	&:active:hover,
+	&:not(:disabled):not(.disabled):active,
+	&:not(:disabled):not(.disabled).active,
 	&.active
 		box-shadow: inset 0 3px 5px rgba($black,.125)
 
@@ -155,6 +171,11 @@ fieldset[disabled] .btn
 		box-shadow: 0 2px 0 0 darken( $c-secondary, 25% )
 		color: $white
 	&:active,
+	&:active,
+	&:active:focus,
+	&:active:hover,
+	&:not(:disabled):not(.disabled):active,
+	&:not(:disabled):not(.disabled).active,
 	&.active
 		box-shadow: inset 0 3px 5px rgba($black,.125)
 
@@ -179,6 +200,11 @@ fieldset[disabled] .btn
 		box-shadow: 0 2px 0 0 darken( $error, 25% )
 		color: $white
 	&:active,
+	&:active,
+	&:active:focus,
+	&:active:hover,
+	&:not(:disabled):not(.disabled):active,
+	&:not(:disabled):not(.disabled).active,
 	&.active
 		box-shadow: inset 0 3px 5px rgba($black,.125)
 

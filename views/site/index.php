@@ -37,19 +37,43 @@ $this->params['classBody'] = "site-navbar-small dashboard";
     <div class="form-group">
         <button class="btn btn-primary">Primary</button>
         <button class="btn btn-error">Error</button>
-        <button class="btn btn-secondary">Secondary</button>
+        <button class="btn btn-default">Secondary</button>
     </div>
 
-     <div class="form-group">
+    <div class="form-group">
         <button class="btn btn-primary active">Primary</button>
         <button class="btn btn-error active">Error</button>
-        <button class="btn btn-secondary active">Secondary</button>
+        <button class="btn btn-default active">Secondary</button>
     </div>
 
-     <div class="form-group">
+    <div class="form-group">
         <button class="btn btn-primary disabled">Primary</button>
         <button class="btn btn-error disabled">Error</button>
-        <button class="btn btn-secondary disabled">Secondary</button>
+        <button class="btn btn-default disabled">Secondary</button>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-primary btn-lg">Primary Grande</button>
+        <button class="btn btn-error btn-lg">Error Grande</button>
+        <button class="btn btn-default btn-lg">Default Grande</button>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-error">Error</button>
+        <button class="btn btn-default">Default</button>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-primary btn-sm">Primary Mediano</button>
+        <button class="btn btn-error btn-sm">Error Mediano</button>
+        <button class="btn btn-default btn-sm">Default Mediano</button>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-primary btn-xs">Primary Chico</button>
+        <button class="btn btn-error btn-xs">Error Chico</button>
+        <button class="btn btn-default btn-xs">Default Chico</button>
     </div>
 
 </form>
