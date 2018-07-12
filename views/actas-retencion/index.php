@@ -2,6 +2,17 @@
 
 use yii\helpers\Html;
 use kartik\grid\GridView;
+use app\models\EntOficiales;
+use yii\helpers\ArrayHelper;
+use app\models\Calendario;
+use app\models\CatTiposIdentificacion;
+use app\models\CatDetectadosPor;
+use app\models\CatDictamen;
+use app\models\CatEstados;
+use app\models\CatTiposActas;
+use app\models\CatTiposMercancias;
+use app\models\CatPaises;
+use kartik\date\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\WrkActasRetencionSearch */
@@ -9,6 +20,21 @@ use kartik\grid\GridView;
 
 $this->title = 'Actas de retención';
 $this->params['breadcrumbs'][] = $this->title;
+$oficiales = EntOficiales::find()->orderBy("txt_nombre")->all();
+$identificaciones = CatTiposIdentificacion::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")->all();
+$detectados = CatDetectadosPor::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")->all();
+$dictamenes = CatDictamen::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")->all();
+$estados = CatEstados::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")->all();
+$tiposActas = CatTiposActas::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")->all();
+$mercancias = CatTiposMercancias::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")->all();
+$paises = CatPaises::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")->all();
+
+
+$this->registerJsFile(
+    '@web/webAssets/js/actas-retencion/index.js',
+    ['depends' => [\app\assets\AppAsset::className()]]
+  );
+
 ?>
 <div class="wrk-actas-retencion-index">
 
@@ -24,30 +50,125 @@ $this->params['breadcrumbs'][] = $this->title;
             ]
             ],
         'columns' => [
-            'id_oficial',
+            
+            [
+                'attribute'=>'id_oficial',
+                'filter'=>ArrayHelper::map($oficiales, 'id_oficial', 'nombreCompleto'),
+                'filterInputOptions'=>[
+                    'class'=>'form-control',
+                    'prompt'=>"Ver todos"
+                ],
+                "format"=>"raw",
+                "value"=>function($data){
+                    return $data->oficial->nombreCompleto;
+                }
+            ],
             'txt_folio',
-            'txt_fecha',
+            [
+                'filter'=>DatePicker::widget([
+                    'model'=>$searchModel,
+                    'attribute'=>'txt_fecha',
+                    'pickerButton'=>false,
+                    'removeButton'=>false,
+                    'type' => DatePicker::TYPE_INPUT,
+                    'pluginOptions' => [
+                        'autoclose'=>true,
+                        'format' => 'dd-mm-yyyy',
+                        'clearBtn'=>true,
+                    ]
+                ]),
+                "attribute"=>"txt_fecha",
+                "format"=>"raw",
+                "value"=>function($data){
+                    return Calendario::getDateComplete($data->txt_fecha);
+                }
+            ],
+            
             'txt_oficina',
-            'txt_tipo_identificacion',
+            [
+                'attribute'=>'txt_tipo_identificacion',
+                'filter'=>ArrayHelper::map($identificaciones, 'txt_nombre', 'txt_nombre'),
+                'filterInputOptions'=>[
+                    'class'=>'form-control',
+                    'prompt'=>"Ver todos"
+                ],
+               
+            ],
             'txt_numero_identificacion',
             'txt_nombre',
             'txt_apellido_paterno',
             'txt_apellido_materno',
             'txt_nacionalidad',
             'txt_correo',
-            'txt_estado',
+            [
+                'attribute'=>'txt_estado',
+                'filter'=>ArrayHelper::map($estados, 'txt_nombre', 'txt_nombre'),
+                'filterInputOptions'=>[
+                    'class'=>'form-control',
+                    'prompt'=>"Ver todos"
+                ],
+               
+            ],
             'txt_municipio',
             'txt_calle',
             'txt_numero',
-            'txt_tipo_acta',
-            'txt_pais_origen',
-            'txt_pais_procedencia',
-            'txt_tipo_mercancia',
+            [
+                'attribute'=>'txt_tipo_acta',
+                'filter'=>ArrayHelper::map($tiposActas, 'txt_nombre', 'txt_nombre'),
+                'filterInputOptions'=>[
+                    'class'=>'form-control',
+                    'prompt'=>"Ver todos"
+                ],
+               
+            ],
+            [
+                'attribute'=>'txt_pais_origen',
+                'filter'=>ArrayHelper::map($paises, 'txt_nombre', 'txt_nombre'),
+                'filterInputOptions'=>[
+                    'class'=>'form-control',
+                    'prompt'=>"Ver todos"
+                ],
+               
+            ],
+            [
+                'attribute'=>'txt_pais_procedencia',
+                'filter'=>ArrayHelper::map($paises, 'txt_nombre', 'txt_nombre'),
+                'filterInputOptions'=>[
+                    'class'=>'form-control',
+                    'prompt'=>"Ver todos"
+                ],
+               
+            ],
+            [
+                'attribute'=>'txt_tipo_mercancia',
+                'filter'=>ArrayHelper::map($mercancias, 'txt_nombre', 'txt_nombre'),
+                'filterInputOptions'=>[
+                    'class'=>'form-control',
+                    'prompt'=>"Ver todos"
+                ],
+               
+            ],
             'txt_cantidad',
             'txt_unidad_medida',
             'txt_descripcion_hechos',
-            'txt_detectado_por',
-            'txt_dictamen',
+            [
+                'attribute'=>'txt_detectado_por',
+                'filter'=>ArrayHelper::map($detectados, 'txt_nombre', 'txt_nombre'),
+                'filterInputOptions'=>[
+                    'class'=>'form-control',
+                    'prompt'=>"Ver todos"
+                ],
+               
+            ],
+            [
+                'attribute'=>'txt_dictamen',
+                'filter'=>ArrayHelper::map($dictamenes, 'txt_nombre', 'txt_nombre'),
+                'filterInputOptions'=>[
+                    'class'=>'form-control',
+                    'prompt'=>"Ver todos"
+                ],
+               
+            ],
             'txt_nombre_verificador_tea',
             'txt_clave_verificador_tea',
             'txt_nombre_completo_oficial',
@@ -81,3 +202,5 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
 </div>
+
+
