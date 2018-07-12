@@ -12,6 +12,7 @@ use app\models\CatEstados;
 use app\models\CatTiposActas;
 use app\models\CatTiposMercancias;
 use app\models\CatPaises;
+use kartik\date\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\WrkActasRetencionSearch */
@@ -50,7 +51,14 @@ $paises = CatPaises::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")->
 
     <?= $form->field($model, 'txt_folio') ?>
 
-    <?= $form->field($model, 'txt_fecha') ?>
+    <?= $form->field($model, 'txt_fecha')->widget(DatePicker::classname(), [
+        //'options' => ['placeholder' => 'Enter birth date ...'],
+        'type' => DatePicker::TYPE_INPUT,
+        'pluginOptions' => [
+            'autoclose'=>true,
+            'format' => 'dd-mm-yyyy'
+        ]
+    ]);?>
 
     <?=$form->field($model, 'txt_oficina') ?>
 
