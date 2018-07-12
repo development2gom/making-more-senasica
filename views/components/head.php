@@ -6,7 +6,7 @@ use yii\helpers\Url;
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description" content="Poner descripción de proyecto">
+    <meta name="description" content="SENASICA">
     <meta name="author" content="2 Geeks one Monkey">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 

@@ -65,6 +65,15 @@ class ActasRetencionController extends Controller
         ]);
     }
 
+    public function actionVerTicket($token){
+
+        $this->layout = "@app/views/layouts/classic/topBar/mainBlank";
+
+        return $this->render('ver-ticket', [
+            'model' => $this->findModel($token),
+        ]);
+    }
+
     /**
      * Creates a new WrkActasRetencion model.
      * If creation is successful, the browser will be redirected to the 'view' page.
