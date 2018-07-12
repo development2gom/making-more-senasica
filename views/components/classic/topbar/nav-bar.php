@@ -42,7 +42,9 @@ role="navigation">
       <!-- End Navbar Toolbar -->
       <!-- Navbar Toolbar Right -->
       <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
-
+        <li class="nav-item">
+          <a class="nav-link no-pjax" href="<?=Url::base()?>/reportes">Reportes</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link no-pjax" href="<?=Url::base()?>/actas-retencion">Actas</a>
         </li>
