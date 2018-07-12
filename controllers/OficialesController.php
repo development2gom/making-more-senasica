@@ -26,10 +26,10 @@ class OficialesController extends Controller
         return [
             'access' => [
                 'class' => AccessControlExtend::className(),
-                'only' => ['bloquear-oficial','activar-oficial','delete','update','create','View','Index'],//colocar aqui todos los action que se encuentran en este controller
+                'only' => ['bloquear-oficial','activar-oficial','delete','update','create','view','index'],//colocar aqui todos los action que se encuentran en este controller
                 'rules' => [
                     [
-                        'actions' => ['bloquear-oficial','activar-oficial','delete','update','create','View','Index'],
+                        'actions' => ['bloquear-oficial','activar-oficial','delete','update','create','view','index'],
                         'allow' => true,
                         'roles' => ['admin','oficial','super-admin','TEA'],
                     ],

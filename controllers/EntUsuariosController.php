@@ -23,10 +23,10 @@ class EntUsuariosController extends Controller
         return [
             'access' => [
                 'class' => AccessControlExtend::className(),
-                'only' => ['delete','update','Create','Create','Index','View'],
+                'only' => ['delete','update','Create','index','view'],
                 'rules' => [
                     [
-                        'actions' => ['delete','update','Create','Create','Index','View'],
+                        'actions' => ['delete','update','create','index','view'],
                         'allow' => true,
                         'roles' => ['admin','oficial','super-admin','TEA'],
                     ],
