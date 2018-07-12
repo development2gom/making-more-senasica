@@ -17,7 +17,7 @@ class ReportesController extends Controller{
         return [
             'access' => [
                 'class' => AccessControlExtend::className(),
-                'only' => ['Exportar','Index'],
+                'only' => ['exportar','index'],
                 'rules' => [
                     [
                         'actions' => ['Exportar','Index'],
