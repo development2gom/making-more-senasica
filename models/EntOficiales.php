@@ -97,4 +97,8 @@ class EntOficiales extends \yii\db\ActiveRecord
     {
         return $this->hasMany(WrkActasRetencion::className(), ['id_oficial' => 'id_oficial']);
     }
+
+    public function getNombreCompleto(){
+        return $this->txt_nombre." ".$this->txt_apellido_paterno." ".$this->txt_apellido_materno;
+    }
 }

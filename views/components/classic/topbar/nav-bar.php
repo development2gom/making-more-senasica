@@ -4,22 +4,25 @@ use app\modules\ModUsuarios\models\EntUsuarios;
 $usuario = EntUsuarios::getUsuarioLogueado();
 
 ?>
-<nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega navbar-inverse"
+<nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega navbar-inverse  sub-navbar"
 role="navigation">
+
+  <div class="nav-menu-container">
+
   <div class="navbar-header">
-    <button type="button" class="navbar-toggler hamburger hamburger-close navbar-toggler-left hided"
+    <!-- <button type="button" class="navbar-toggler hamburger hamburger-close navbar-toggler-left hided"
     data-toggle="menubar">
       <span class="sr-only">Toggle navigation</span>
       <span class="hamburger-bar"></span>
-    </button>
+    </button> -->
     <button type="button" class="navbar-toggler collapsed" data-target="#site-navbar-collapse"
     data-toggle="collapse">
       <i class="icon wb-more-horizontal" aria-hidden="true"></i>
     </button>
     <a class="navbar-brand navbar-brand-center" href="<?=Url::base()?>">
-      <img class="navbar-brand-logo navbar-brand-logo-normal" src="<?=Url::base()?>/webAssets/images/logo.png"
+      <img class="navbar-brand-logo navbar-brand-logo-normal" src="<?=Url::base()?>/webAssets/images/senasica.png"
       title="Remark">
-      <img class="navbar-brand-logo navbar-brand-logo-special" src="<?=Url::base()?>/webAssets/images/logo.png"
+      <img class="navbar-brand-logo navbar-brand-logo-special" src="<?=Url::base()?>/webAssets/images/senasica.png"
       title="Remark">
       
     </a>
@@ -42,7 +45,9 @@ role="navigation">
       <!-- End Navbar Toolbar -->
       <!-- Navbar Toolbar Right -->
       <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
-
+        <li class="nav-item">
+          <a class="nav-link no-pjax" href="<?=Url::base()?>/reportes">Reportes</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link no-pjax" href="<?=Url::base()?>/actas-retencion">Actas</a>
         </li>
@@ -65,4 +70,7 @@ role="navigation">
     </div>
     <!-- End Navbar Collapse -->
   </div>
+
+  </div>
+
 </nav>

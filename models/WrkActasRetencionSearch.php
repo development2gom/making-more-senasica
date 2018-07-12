@@ -12,6 +12,8 @@ use app\models\WrkActasRetencion;
  */
 class WrkActasRetencionSearch extends WrkActasRetencion
 {
+    public $startDate;
+    public $endDate;
     /**
      * @inheritdoc
      */
@@ -19,7 +21,7 @@ class WrkActasRetencionSearch extends WrkActasRetencion
     {
         return [
             [['id_acta_retencion', 'id_oficial', 'data'], 'integer'],
-            [['uddi', 'txt_folio', 'txt_fecha', 'txt_oficina', 'txt_tipo_identificacion', 'txt_numero_identificacion', 'txt_nombre', 'txt_apellido_paterno', 'txt_apellido_materno', 'txt_nacionalidad', 'txt_correo', 'txt_estado', 'txt_municipio', 'txt_calle', 'txt_numero', 'txt_tipo_acta', 'txt_pais_origen', 'txt_pais_procedencia', 'txt_tipo_mercancia', 'txt_cantidad', 'txt_unidad_medida', 'txt_descripcion_hechos', 'txt_detectado_por', 'txt_dictamen', 'txt_nombre_verificador_tea', 'txt_clave_verificador_tea', 'txt_nombre_completo_oficial'], 'safe'],
+            [['uddi', 'txt_folio',"startDate","endDate", 'txt_fecha', 'txt_oficina', 'txt_tipo_identificacion', 'txt_numero_identificacion', 'txt_nombre', 'txt_apellido_paterno', 'txt_apellido_materno', 'txt_nacionalidad', 'txt_correo', 'txt_estado', 'txt_municipio', 'txt_calle', 'txt_numero', 'txt_tipo_acta', 'txt_pais_origen', 'txt_pais_procedencia', 'txt_tipo_mercancia', 'txt_cantidad', 'txt_unidad_medida', 'txt_descripcion_hechos', 'txt_detectado_por', 'txt_dictamen', 'txt_nombre_verificador_tea', 'txt_clave_verificador_tea', 'txt_nombre_completo_oficial'], 'safe'],
         ];
     }
 

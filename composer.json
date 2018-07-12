@@ -24,7 +24,9 @@
         "kartik-v/yii2-mpdf": "*",
         "johnitvn/yii2-ajaxcrud": "*",
         "kartik-v/yii2-export": "*",
-        "consik/yii2-websocket": "^1.0"
+        "consik/yii2-websocket": "^1.0",
+        "kartik-v/yii2-widget-datepicker": "@dev",
+        "kartik-v/yii2-field-range": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
