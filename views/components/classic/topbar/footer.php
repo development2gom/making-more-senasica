@@ -10,19 +10,16 @@ date('Y')?> <a href="https://2geeksonemonkey.com/">2 Geeks one Monkey</a></div>
 </footer> -->
 
 <footer class="site-footer">
-  <div class="site-footer-legal">
-      <a href="https://2geeksonemonkey.com/">
-        <img class="footer-logo" src="<?=Url::base()?>/webAssets/images/logo.png"></div>
-      </a>
-      
-  </div>
+
+  <div class="footer-container">
   
-  <div class="site-footer-right">
-    
-      <a href="https://2geeksonemonkey.com/">
-        2 Geeks one Monkey
-      </a>
-      <img class="footer-logo" src="<?=Url::base()?>/webAssets/images/monkey-logo.png">
+    <div class="site-footer-legal">
+        <a href="#" target="_blank">
+          &copy; 2018 Senasica.
+        </a>
+        
+    </div>
+
   </div>
     
 </footer> 
