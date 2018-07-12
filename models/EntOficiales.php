@@ -27,6 +27,9 @@ use Yii;
  */
 class EntOficiales extends \yii\db\ActiveRecord
 {
+    
+    const STATUS_ACTIVED = 1;
+    const STATUS_BLOCKED = 0;
     /**
      * @inheritdoc
      */
