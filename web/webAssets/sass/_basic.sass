@@ -180,9 +180,9 @@ fieldset[disabled] .btn
 		box-shadow: inset 0 3px 5px rgba($black,.125)
 
 .btn-error
-	background-color: $error
-	border-color: $error
-	box-shadow: 0 2px 0 0 darken( $error, 30% )
+	background-color: $btn-error
+	border-color: $btn-error
+	box-shadow: 0 2px 0 0 darken( $btn-error, 30% )
 	color: $white
 	&:active,
 	&:focus,
@@ -195,9 +195,9 @@ fieldset[disabled] .btn
 	&[disabled]:focus,
 	&:hover,
 	&:focus
-		background-color: darken( $error, 7% )
-		border-color: darken( $error, 10% )
-		box-shadow: 0 2px 0 0 darken( $error, 25% )
+		background-color: darken( $btn-error, 7% )
+		border-color: darken( $btn-error, 10% )
+		box-shadow: 0 2px 0 0 darken( $btn-error, 25% )
 		color: $white
 	&:active,
 	&:active,
@@ -400,19 +400,38 @@ body.site-navbar-small
 
 // Modal
 .modal-backdrop
-	background-color: rgba(red,.2)
-	position: absolute
-	z-index: 9906
+	background-color: $modal
+	// position: absolute
+	// z-index: 9906
 
 .modal
-	position: fixed
-	z-index: 9999
+	background-color: $modal
 	.modal-dialog
-		.modal-header
-			button.close
-				position: absolute
-				right: 24px
-				top: 16px
+		.modal-content
+			border: 1px solid transparent
+			border-radius: 0
+			box-shadow: 0 5px 15px rgba($black,.5)
+			.modal-header
+				background-color: $c-black-3
+				border-bottom: 1px solid transparent
+				color: $white
+				min-height: 16.43px
+				padding: 15px
+				position: relative
+				.close
+					display: none
+				h4.modal-title
+					color: $white
+					@extend .fw-light
+					text-align: center
+					width: 100%
+			.modal-body
+				padding: 40px 40px 20px
+			.modal-footer
+				border-top: 1px solid transparent
+				padding: 15px
+
+	
 
 
 // Summary
