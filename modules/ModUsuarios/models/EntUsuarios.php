@@ -88,7 +88,14 @@ class EntUsuarios extends \yii\db\ActiveRecord implements IdentityInterface
 				'tooShort' => 'El campo debe ser mínimo de 12 digítos'
 
 			],
-
+			[
+				'txt_rfc',
+				'trim'
+			],
+			[
+				'txt_curp',
+				'trim'
+			],
 			
 				// checks if "username" starts with a letter and contains only word characters
 			['txt_rfc', 'match', 'pattern' => '/^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$/', "message" => "RFC no válido"],
@@ -137,10 +144,8 @@ class EntUsuarios extends \yii\db\ActiveRecord implements IdentityInterface
 				'on' => 'update',
 				'message' => 'Campo requerido'
 			],
-
-
-
-
+			
+		
 
 
 

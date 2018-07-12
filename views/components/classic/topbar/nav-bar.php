@@ -47,16 +47,15 @@ role="navigation">
       <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
 
         <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link no-pjax" href="<?=Url::base()?>/actas-retencion">Actas</a>
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="fade" role="button">Mega <i class="icon wb-chevron-down-mini" aria-hidden="true"></i></a>
+          <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="fade" role="button">Catalogos <i class="icon wb-chevron-down-mini" aria-hidden="true"></i></a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="exampleAlignmentDropdown" role="menu">
-            <a class="dropdown-item" href="javascript:void(0)" role="menuitem">Action</a>
-            <a class="dropdown-item" href="javascript:void(0)" role="menuitem">Another action</a>
-            <a class="dropdown-item" href="javascript:void(0)" role="menuitem">Something else here</a>
-            <a class="dropdown-item" href="javascript:void(0)" role="menuitem">Separated link</a>
+            <a class="dropdown-item no-pjax" href="<?=Url::base()?>/usuarios" role="menuitem">Usuarios web</a>
+            <a class="dropdown-item no-pjax" href="<?=Url::base()?>/oficiales" role="menuitem">Oficiales</a>
+            
           </div>
         </li>
 
