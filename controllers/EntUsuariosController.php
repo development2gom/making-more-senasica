@@ -8,6 +8,7 @@ use app\modules\ModUsuarios\models\EntUsuariosSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\components\AccessControlExtend;
 
 /**
  * EntUsuariosController implements the CRUD actions for EntUsuarios model.
@@ -20,12 +21,19 @@ class EntUsuariosController extends Controller
     public function behaviors()
     {
         return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
+            'access' => [
+                'class' => AccessControlExtend::className(),
+                'only' => ['delete','update','Create','index','view'],
+                'rules' => [
+                    [
+                        'actions' => ['delete','update','create','index','view'],
+                        'allow' => true,
+                        'roles' => ['admin','oficial','super-admin','TEA'],
+                    ],
+                   
                 ],
             ],
+           
         ];
     }
 

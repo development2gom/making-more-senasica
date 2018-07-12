@@ -5,10 +5,31 @@ use Yii;
 use yii\web\Controller;
 use app\models\WrkActasRetencion;
 use app\models\WrkActasRetencionSearch;
+use app\components\AccessControlExtend;
 
 
 class ReportesController extends Controller{
-
+/**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControlExtend::className(),
+                'only' => ['exportar','index'],
+                'rules' => [
+                    [
+                        'actions' => ['exportar','index'],
+                        'allow' => true,
+                        'roles' => ['admin','oficial','super-admin','TEA'],
+                    ],
+                   
+                ],
+            ],
+            
+        ];
+    }
     public function actionIndex(){
         $searchModel = new WrkActasRetencionSearch();
         
