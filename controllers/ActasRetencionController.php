@@ -118,7 +118,7 @@ class ActasRetencionController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = WrkActasRetencion::find()->where(["uddi"=>$id])->one()) !== null) {
+        if (($model = WrkActasRetencion::find()->where(["txt_folio"=>$id])->one()) !== null) {
             return $model;
         }
 

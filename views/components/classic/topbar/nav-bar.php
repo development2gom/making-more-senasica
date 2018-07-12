@@ -4,7 +4,7 @@ use app\modules\ModUsuarios\models\EntUsuarios;
 $usuario = EntUsuarios::getUsuarioLogueado();
 
 ?>
-<nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega navbar-inverse"
+<nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega navbar-inverse  sub-navbar"
 role="navigation">
 
   <div class="nav-menu-container">
