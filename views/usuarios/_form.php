@@ -66,7 +66,7 @@ $oisas = CatOisas::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")->al
                 <?= $form->field($model, 'txt_apellido_paterno')->textInput(['maxlength' => true, 'placeholder' => 'Apellido paterno'])->label(false) ?>
             </div>
             <div class="col-md-4">
-                <?= $form->field($model, 'txt_apellido_materno')->textInput(['maxlength' => true, 'placeholder' => 'Apellido paterno'])->label(false) ?>
+                <?= $form->field($model, 'txt_apellido_materno')->textInput(['maxlength' => true, 'placeholder' => 'Apellido materno'])->label(false) ?>
             </div>
         </div>
         <div class="row">
