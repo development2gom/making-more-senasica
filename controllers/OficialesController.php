@@ -11,25 +11,32 @@ use yii\filters\VerbFilter;
 use app\modules\ModUsuarios\models\Utils;
 use app\models\Calendario;
 use app\models\ResponseServices;
+use app\components\AccessControlExtend;
 
 /**
  * OficialesController implements the CRUD actions for EntOficiales model.
  */
 class OficialesController extends Controller
 {
-    /**
+   /**
      * @inheritdoc
      */
     public function behaviors()
     {
         return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
+            'access' => [
+                'class' => AccessControlExtend::className(),
+                'only' => ['bloquear-oficial','activar-oficial','delete','update','create','View','Index'],//colocar aqui todos los action que se encuentran en este controller
+                'rules' => [
+                    [
+                        'actions' => ['bloquear-oficial','activar-oficial','delete','update','create','View','Index'],
+                        'allow' => true,
+                        'roles' => ['admin','oficial','super-admin','TEA'],
+                    ],
+                   
                 ],
             ],
-        ];
+      ];
     }
 
     /**
