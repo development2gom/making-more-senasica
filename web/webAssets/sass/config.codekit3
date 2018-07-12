@@ -37,6 +37,13 @@
 		"oAP": "\/.sass-cache\/2546b73c6292af5fa41bbe6e3e5c7148d4ee91d8\/_footer.sassc",
 		"oF": 0
 		},
+	"\/.sass-cache\/2546b73c6292af5fa41bbe6e3e5c7148d4ee91d8\/_listados.sassc": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/.sass-cache\/2546b73c6292af5fa41bbe6e3e5c7148d4ee91d8\/_listados.sassc",
+		"oF": 0
+		},
 	"\/.sass-cache\/2546b73c6292af5fa41bbe6e3e5c7148d4ee91d8\/_login.sassc": {
 		"cB": 0,
 		"ft": 8192,
@@ -289,6 +296,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/_ionicons.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/_listados.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/_listados.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
