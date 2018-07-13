@@ -14,6 +14,7 @@ use app\models\CatTiposMercancias;
 use app\models\CatPaises;
 use kartik\date\DatePicker;
 
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\WrkActasRetencionSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -233,5 +234,3 @@ $this->registerJsFile(
         ],
     ]); ?>
 </div>
-
-

@@ -20,11 +20,11 @@ $oisas = CatOisas::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")->al
 
     <?= $form->field($model, 'txt_nombre_usuario')->textInput(['maxlength' => true, 'placeholder' => 'Usuario'])->label(false) ?>
 
-   <?php // 'placeholder' => 'Apellido paterno'])->label(false) ?>
+
 
     <?= $form->field($model, 'txt_contrasena')->textInput(['maxlength' => true,'placeholder' => 'Contraseña'])->label(false) ?>
 
-    <?php // $form->field($model, 'fch_creacion')->textInput() ?>
+
 
     <?= $form->field($model, 'txt_oisa')->widget(Select2::classname(), [
                         'data' => ArrayHelper::map($oisas, 'txt_nombre', 'txt_nombre'),
