@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use kartik\grid\GridView;
 use app\models\EntOficiales;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\EntOficialesSearch */
@@ -76,11 +77,11 @@ $this->params['classBody'] = "site-navbar-small usuarios-list";
                     
                   return '<div class="btn-groups" data-toggle="buttons" role="group">
                   <label class="btn btn-sm btn-active '.$activo.'">
-                  <input class="js-activar-oficial" type="radio" name="options" autocomplete="off" value="activar"   data-token="'.$data->uddi.'" />
+                  <input class="js-activar-oficial" type="radio" name="options" autocomplete="off" value="activar"   data-uddi="'.$data->uddi.'" data-url="'.Url::base().'" />
                   Activo
                   </label>
                   <label class="btn btn-sm btn-inactive '.$inactivo.'">
-                  <input class="js-bloquear-oficial"  type="radio" name="options" autocomplete="off" value="bloquear"  data-token="'.$data->uddi.'" />
+                  <input class="js-bloquear-oficial"  type="radio" name="options" autocomplete="off" value="bloquear"  data-uddi="'.$data->uddi.'" data-url="'.Url::base().'" />
                   Inactivo
                   </label>
                   </div>';
