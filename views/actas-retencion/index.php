@@ -55,6 +55,9 @@ $this->registerJsFile(
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'tableOptions' => [
+            'class'=>"table table-hover list-table"
+        ],
         'pjax'=>true,
         'pjaxSettings'=>[
             'options'=>[

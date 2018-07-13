@@ -53,13 +53,12 @@ role="navigation">
           <a class="nav-link no-pjax" href="<?=Url::base()?>/actas-retencion">Actas</a>
         </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="fade" role="button">Catalogos <i class="icon wb-chevron-down-mini" aria-hidden="true"></i></a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="exampleAlignmentDropdown" role="menu">
-            <a class="dropdown-item no-pjax" href="<?=Url::base()?>/usuarios" role="menuitem">Usuarios web</a>
-            <a class="dropdown-item no-pjax" href="<?=Url::base()?>/oficiales" role="menuitem">Oficiales</a>
-            
-          </div>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Catálogos <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="<?=Url::base()?>/usuarios">Usuarios web</a></li>
+            <li><a href="<?=Url::base()?>/oficiales">Oficiales</a></li>
+          </ul>
         </li>
 
         <li class="nav-item">
