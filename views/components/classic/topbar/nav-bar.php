@@ -50,14 +50,14 @@ role="navigation">
           <a class="nav-link no-pjax" href="<?=Url::base()?>/reportes">Reportes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link no-pjax" href="<?=Url::base()?>/actas-retencion">Actas</a>
+          <!-- <a class="nav-link no-pjax" href="<?=Url::base()?>/actas-retencion">Actas</a> -->
         </li>
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Catálogos <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="<?=Url::base()?>/usuarios">Usuarios web</a></li>
-            <li><a href="<?=Url::base()?>/oficiales">Oficiales</a></li>
+            <li><a href="<?=Url::base()?>/oficiales">Usuarios móviles</a></li>
           </ul>
         </li>
 

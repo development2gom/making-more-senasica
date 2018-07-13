@@ -69,10 +69,10 @@ $oisas = CatOisas::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")->al
         
         <div class="col-md-12">
             <div class="form-group text-right">
-                <?= Html::submitButton('Guardar oficial', ['class' => 'btn btn-primary']) ?>
+                <?= Html::submitButton('Guardar', ['class' => 'btn btn-primary']) ?>
             </div>
         </div>
 
-    </div>
+   
 
 <?php ActiveForm::end(); ?>
