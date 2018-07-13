@@ -54,15 +54,15 @@ role="navigation">
         </li>
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Catálogos <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="<?=Url::base()?>/usuarios">Usuarios web</a></li>
-            <li><a href="<?=Url::base()?>/oficiales">Usuarios móviles</a></li>
+          <a href="#" class="dropdown-toggle no-pjax" data-toggle="dropdown" role="button" aria-expanded="false">Catálogos <span class="caret"></span></a>
+          <ul class="dropdown-menu no-pjax" role="menu">
+            <li><a class='no-pjax' href="<?=Url::base()?>/usuarios">Usuarios web</a></li>
+            <li><a class='no-pjax' href="<?=Url::base()?>/oficiales">Usuarios móviles</a></li>
           </ul>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="<?=Url::base()?>/site/logout"><i class="icon wb-power" aria-hidden="true"></i> Logout</a>
+          <a class="nav-link no-pjax" href="<?=Url::base()?>/site/logout"><i class="icon wb-power no-pjax" aria-hidden="true"></i> Logout</a>
         </li>
         
       </ul>
