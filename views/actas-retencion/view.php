@@ -7,10 +7,13 @@ use yii\widgets\DetailView;
 /* @var $model app\models\WrkActasRetencion */
 
 $this->title = "Acta";
-$this->params['breadcrumbs'][] = ['label' => 'Wrk Actas Retencions', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['classBody'] = "site-navbar-small actas-retencion-view";
 ?>
-<div class="wrk-actas-retencion-view">
+
+<h2 class="title-gral"><?= Html::encode($this->title) ?></h2>
+
+<div class="cont-view">
+
     <?=$model->id_oficial?>
     <?=$model->txt_folio?>
     <?=$model->txt_fecha?>
