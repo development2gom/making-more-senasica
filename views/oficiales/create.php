@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\EntOficiales */
 
-$this->title = 'Crerar Oficiales';
+$this->title = 'Crear Usuario móvil';
 $this->params['classBody'] = "site-navbar-small site-menubar-hide oficiales-create";
 ?>
 
