@@ -6,13 +6,12 @@ use yii\helpers\Html;
 /* @var $model app\models\EntOficiales */
 
 $this->title = 'Actualizar Oficiales';
-$this->params['breadcrumbs'][] = ['label' => 'Ent Oficiales', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id_oficial, 'url' => ['view', 'id' => $model->id_oficial]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['classBody'] = "site-navbar-small site-menubar-hide oficiales-create";
 ?>
-<div class="ent-oficiales-update">
 
+<h2 class="title-gral"><?= Html::encode($this->title) ?></h2>
 
+<div class="actas-retencion-create">
 
     <?= $this->render('_form', [
         'model' => $model,

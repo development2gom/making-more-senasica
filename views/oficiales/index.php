@@ -13,7 +13,7 @@ $this->registerJsFile(
   ['depends' => [\app\assets\AppAsset::className()]]
 );
 
-$this->title = 'Oficiales';
+$this->title = 'Usuarios móviles';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ent-oficiales-index">
@@ -69,7 +69,7 @@ $this->params['breadcrumbs'][] = $this->title;
                   <input class="js-bloquear-oficial"  type="radio" name="options" autocomplete="off" value="bloquear"  data-token="'.$data->uddi.'" />
                   Inactivo
                   </label>
-                  </div>';
+                  </div>'; 
                  
                 }
               ],

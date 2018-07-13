@@ -10,7 +10,7 @@ $(document).ready(function(){
 
             }
         });
-    });
+    }); 
 
     $('.js-bloquear-oficial').on('change', function(){
 
