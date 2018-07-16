@@ -21,12 +21,12 @@ class Email{
 	 *   	
 	 * @return boolean
 	 */
-	public function sendEmail() {
+	public static function sendEmail($html,$params,$to,$subject) {
 		return Yii::$app->mailer->compose ( [
 				// 'html' => '@app/mail/layouts/example',
 				// 'text' => '@app/mail/layouts/text'
-				'html' => $this->emailHtml,
+				'html' => $html,
 				//'text' => $templateText 
-		], $this->params )->setFrom ( $this->from )->setTo ( $this->to )->setSubject ( $this->subject )->send ();
+		], $params )->setFrom ( Yii::$app->params ['modUsuarios'] ['email'] ['emailActivacion']  )->setTo ( $to )->setSubject ( $subject )->send ();
 	}
 }

@@ -14,7 +14,7 @@ $this->params['classBody'] = "site-navbar-small actas-retencion-view";
 
 <div class="cont-view">
 
-    <p><span>Oficial:</span> <?=$model->id_oficial?></p>
+    <p><span>Oficial:</span> <?=$model->oficial->nombreCompleto?></p>
     <p><span>Folio:</span> <?=$model->txt_folio?></p>
     <p><span>Fecha:</span> <?=$model->txt_fecha?></p>
     <p><span>Oficina:</span> <?=$model->txt_oficina?></p>

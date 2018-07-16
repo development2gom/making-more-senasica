@@ -41,6 +41,12 @@ $this->params['classBody'] = "site-navbar-small usuarios-list";
           'class'=>"table table-hover list-table"
         ],
         'layout' => '{items}{summary}{pager}',
+        'pjax'=>true,
+      'pjaxSettings'=>[
+        'options'=>[
+          'linkSelector'=>"a:not(.no-pjax)"
+        ]
+      ],
         'columns' => [
             // ['class' => 'yii\grid\SerialColumn'],
 
