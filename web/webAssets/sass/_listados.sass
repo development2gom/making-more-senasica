@@ -19,8 +19,11 @@
 		justify-content: space-between
 		margin-bottom: 32px
 		width: 100%
+		+respond-to(xs)
+			align-items: flex-start
+			flex-direction: column
 		h2.title
-			@extend .fs-36
+			@extend .fs-32
 			@extend .fw-regular
 			position: relative
 			text-transform: uppercase
@@ -37,6 +40,10 @@
 			align-items: center
 			display: flex
 			justify-content: flex-end
+			+respond-to(xs)
+				justify-content: flex-end
+				margin-top: 32px
+				width: 100%
 			.btn.btn-primary
 				padding: 8px 25px
 

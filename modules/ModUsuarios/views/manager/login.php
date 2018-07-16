@@ -19,7 +19,7 @@ $this->params['classBody'] = "page-login-v3 layout-full login-page";
 	<div class="panel-body">
 		
 		<h2>
-            <img src="<?=Url::base()?>/webAssets/images/logo-latingal-boutique.png" alt="">
+            Senasica
         </h2>
 
 
