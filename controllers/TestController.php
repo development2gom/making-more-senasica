@@ -26,6 +26,7 @@ class TestController extends Controller
         $subject='Email prueba';
         $envio= Email::sendEmail($html,$params,$to,$subject);
         echo $envio;
-exit;
+
+
     }
 }
