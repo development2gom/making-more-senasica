@@ -90,15 +90,24 @@ body.login-page
 
 
 // ----------- login
-.login-page
+body.login-page
 	// background-color: red
 	.panel
 		background-color: transparent
 		box-shadow: none
+		+respond-to(xs)
+			padding-left: 0
+			padding-right: 0
 		.panel-body
+			+respond-to(xs)
+				padding-left: 0
+				padding-right: 0
 
 			form.form-login
 				min-width: 320px
+				+respond-to(xs)
+					max-width: 100%
+					min-width: 100%
 
 			.form-registro
 

@@ -47,6 +47,7 @@ $this->registerCssFile(
     ]) ?>
 
 </div>
+
 <?php
 if ($model->txt_auth_item == ConstantesWeb::SUPERVISOR) {
   echo $this->render("_view-usuarios-asignados", ['model' => $model, 'roles' => $roles]);
