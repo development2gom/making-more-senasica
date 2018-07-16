@@ -11,7 +11,7 @@ $this->params['classBody'] = "site-navbar-small site-menubar-hide oficiales-crea
 
 <h2 class="title-gral"><?= Html::encode($this->title) ?></h2>
 
-<div class="actas-retencion-create">
+<div class="cont-create">
 
     <?= $this->render('_form', [
         'model' => $model,
