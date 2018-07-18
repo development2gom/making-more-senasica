@@ -82,7 +82,7 @@ $oficinas = CatOisas::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")-
                 ->widget(Select2::classname(), [
                 'data' => ArrayHelper::map($oficiales, 'id_oficial', 'nombreCompleto'),
                 'language' => 'es',
-                'options' => ['placeholder' => 'Seleccionar oficial'],
+                'options' => ['placeholder' => 'Seleccionar oficial / TEA'],
                 'pluginOptions' => [
                 'allowClear' => true
                 ],

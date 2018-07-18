@@ -75,7 +75,7 @@ class WrkActasRetencion extends \yii\db\ActiveRecord
     {
         return [
             'id_acta_retencion' => 'Id Acta Retencion',
-            'id_oficial' => 'Oficial',
+            'id_oficial' => 'Oficial / TEA',
             'uddi' => 'Uddi',
             'txt_folio' => 'Folio',
             'txt_fecha' => 'Fecha',

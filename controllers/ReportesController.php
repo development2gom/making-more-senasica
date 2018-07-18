@@ -101,7 +101,7 @@ class ReportesController extends Controller{
     }
 
     public function setHeaders(){
-        return["Oficial", "Folio", "Fecha", "Oficina", "Tipo identificacion", 
+        return["Oficial / TEA", "Folio", "Fecha", "Oficina", "Tipo identificacion", 
             "Número identificación", "Nombre", "Apellido paterno", "Apellido materno", 
             "Nacionalidad", "Correo", "Estado", "Municipio", "Calle", "Numero", "Tipo acta", 
             "País origen", "País procedencia", "Tipo mercancia", "Cantidad", "Unidad medida", 
