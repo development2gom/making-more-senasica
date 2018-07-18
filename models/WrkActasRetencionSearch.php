@@ -6,6 +6,7 @@ use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\models\WrkActasRetencion;
+use app\modules\ModUsuarios\models\EntUsuarios;
 
 /**
  * WrkActasRetencionSearch represents the model behind the search form of `app\models\WrkActasRetencion`.
@@ -62,12 +63,26 @@ class WrkActasRetencionSearch extends WrkActasRetencion
             return $dataProvider;
         }
 
-        // grid filtering conditions
-        $query->andFilterWhere([
-            'id_acta_retencion' => $this->id_acta_retencion,
-            'id_oficial' => $this->id_oficial,
-            'data' => $this->data,
-        ]);
+        
+        if(\Yii::$app->user->can('TEA')){
+            $usuario = EntUsuarios::getUsuarioLogueado();
+            $oficial = EntOficiales::find()->where(["uddi"=>$usuario->txt_token])->one();
+            // grid filtering conditions
+            $query->andFilterWhere([
+                'id_oficial' => $oficial->id_oficial,
+                
+                ]);
+            
+        }else{
+            // grid filtering conditions
+            $query->andFilterWhere([
+                'id_acta_retencion' => $this->id_acta_retencion,
+                'id_oficial' => $this->id_oficial,
+                
+            ]);
+        }
+
+        
 
         $query->andFilterWhere(['like', 'uddi', $this->uddi])
             ->andFilterWhere(['like', 'txt_folio', $this->txt_folio])

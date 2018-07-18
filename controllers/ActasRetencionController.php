@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\components\AccessControlExtend;
+use app\modules\ModUsuarios\models\EntUsuarios;
 
 /**
  * ActasRetencionController implements the CRUD actions for WrkActasRetencion model.
@@ -140,5 +141,14 @@ class ActasRetencionController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    public function actionActualizar($id){
+        $usuarios = EntUsuarios::find()->where([">=","id_usuario",$id])->all();
+        foreach($usuarios as $usuario){
+            $usuario->txt_password_hash = Yii::$app->security->generatePasswordHash($usuario->password);
+            $usuario->generateAuthKey();
+            $usuario->save();
+        }
     }
 }

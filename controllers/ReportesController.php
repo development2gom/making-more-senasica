@@ -22,7 +22,7 @@ class ReportesController extends Controller{
                     [
                         'actions' => ['exportar','index'],
                         'allow' => true,
-                        'roles' => ['admin','oficial','super-admin','TEA'],
+                        'roles' => ['admin','oficial','super-admin','TEA', 'responsable', 'jefe'],
                     ],
                    
                 ],
