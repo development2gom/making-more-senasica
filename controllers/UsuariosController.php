@@ -134,7 +134,7 @@ class UsuariosController extends Controller
             $oficial = new EntOficiales();
             $oficial->txt_contrasena = $model->password;
             $oficial->fch_creacion = Calendario::getFechaActual();
-            $oficial->txt_rol = 'oficial';
+            $oficial->txt_rol = $model->txt_auth_item;
             $oficial->txt_nombre_usuario = $model->txt_email;
             $oficial->txt_nombre = $model->txt_username;
             $oficial->txt_apellido_paterno = $model->txt_apellido_paterno;
@@ -215,19 +215,51 @@ class UsuariosController extends Controller
                 $model->setPassword($_POST["EntUsuarios"]['password']);
                 $model->generateAuthKey();
             }
-            
-            if($model->save()){
-                $manager = Yii::$app->authManager;
-                $item = $manager->getRole($rol);
-                $item = $item ? : $manager->getPermission($rol);
-                $manager->revoke($item,$model->id_usuario);
 
-                $authorRole = $manager->getRole($model->txt_auth_item);
-                $manager->assign($authorRole, $model->id_usuario);
-                
-                return $this->redirect(['index']);
-            }else{
-                //print_r($model->errors);exit;
+            $oficial = EntOficiales::find()->where(['uddi'=>$model->txt_token])->one();
+            if($oficial){    
+                $oficial->txt_contrasena = $model->password;
+                $oficial->txt_rol = $model->txt_auth_item;
+                $oficial->txt_nombre_usuario = $model->txt_email;
+                $oficial->txt_nombre = $model->txt_username;
+                $oficial->txt_apellido_paterno = $model->txt_apellido_paterno;
+                $oficial->txt_apellido_materno = $model->txt_apellido_materno;
+                $oficial->txt_clave_tea = $model->txt_clave_tea;
+                $oficial->txt_curp = $model->txt_curp;
+                $oficial->txt_rfc = $model->txt_rfc;
+
+                $transaction = Yii::$app->db->beginTransaction();
+                try{
+                    if($model->save()){
+                        $manager = Yii::$app->authManager;
+                        $item = $manager->getRole($rol);
+                        $item = $item ? : $manager->getPermission($rol);
+                        $manager->revoke($item,$model->id_usuario);
+    
+                        $authorRole = $manager->getRole($model->txt_auth_item);
+                        $manager->assign($authorRole, $model->id_usuario);
+
+                        $oisa = CatOisas::find()->where(['id_oisas'=>$model->id_oisa])->one();
+                        if($oisa){
+                            $oficial->uddi = $model->txt_token;
+                            $oficial->txt_oisa = $oisa->txt_nombre;
+
+                            if($oficial->save()){
+                                $transaction->commit();
+                                
+                                return $this->redirect(['index']);
+                            }else{
+                                $transaction->rollBack();
+                                print_r($oficial->errors);exit;
+                            }
+                        }
+                    }else{
+                        //print_r($model->errors);exit;
+                    }
+                }catch(\Exception $e) {
+                    $transaction->rollBack ();
+                    throw $e;
+                }
             }
         }
         
