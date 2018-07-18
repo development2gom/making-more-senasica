@@ -17,6 +17,9 @@ use app\models\EntGruposTrabajo;
 use app\models\EntCitas;
 use app\models\ResponseServices;
 use kartik\form\ActiveForm;
+use app\models\EntOficiales;
+use app\models\CatOisas;
+use app\models\Calendario;
 
 /**
  * UsuariosController implements the CRUD actions for EntUsuarios model.
@@ -128,10 +131,43 @@ class UsuariosController extends Controller
             $model->repeatPassword = $model->password;
             //$model->txt_auth_item = $_POST['EntUsuarios']['txt_auth_item'];
             
+            $oficial = new EntOficiales();
+            $oficial->txt_contrasena = $model->password;
+            $oficial->fch_creacion = Calendario::getFechaActual();
+            $oficial->txt_rol = 'oficial';
+            $oficial->txt_nombre_usuario = $model->txt_email;
+            $oficial->txt_nombre = $model->txt_username;
+            $oficial->txt_apellido_paterno = $model->txt_apellido_paterno;
+            $oficial->txt_apellido_materno = $model->txt_apellido_materno;
+            $oficial->txt_clave_tea = $model->txt_clave_tea;
+            $oficial->txt_curp = $model->txt_curp;
+            $oficial->txt_rfc = $model->txt_rfc;
+            $oficial->b_habilitado = 1;
 
-            if ($user = $model->signup()) {
+            $transaction = Yii::$app->db->beginTransaction();
+            try{
+                if($user = $model->signup()){
+                    $oisa = CatOisas::find()->where(['id_oisas'=>$model->id_oisa])->one();
+                    if($oisa){
+                        $oficial->uddi = $model->txt_token;
+                        $oficial->txt_oisa = $oisa->txt_nombre;
 
-                return $this->redirect(['index']);
+                        if($oficial->save()){
+                            $transaction->commit();
+                            
+                            return $this->redirect(['index']);
+                        }else{
+                            $transaction->rollBack();
+                            print_r($oficial->errors);exit;
+                        }
+                    }
+                }else{
+                    $transaction->rollBack();
+                    print_r($model->errors);exit;
+                }
+            }catch(\Exception $e) {
+                $transaction->rollBack ();
+                throw $e;
             }
         // return $this->redirect(['view', 'id' => $model->id_usuario]);
         }

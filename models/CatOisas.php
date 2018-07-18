@@ -31,7 +31,7 @@ class CatOisas extends \yii\db\ActiveRecord
     {
         return [
             [['txt_descripcion'], 'string'],
-            [['b_habilitado'], 'integer'],
+            [['b_habilitado', 'id_oisas'], 'integer'],
             [['txt_nombre'], 'string', 'max' => 100],
         ];
     }
