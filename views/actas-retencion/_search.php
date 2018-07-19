@@ -13,6 +13,7 @@ use app\models\CatTiposActas;
 use app\models\CatTiposMercancias;
 use app\models\CatPaises;
 use kartik\date\DatePicker;
+use app\models\CatOisas;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\WrkActasRetencionSearch */
@@ -29,6 +30,7 @@ $estados = CatEstados::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")
 $tiposActas = CatTiposActas::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")->all();
 $mercancias = CatTiposMercancias::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")->all();
 $paises = CatPaises::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")->all();
+$oficinas = CatOisas::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")->all();
 ?>
 
 
@@ -72,19 +74,24 @@ $paises = CatPaises::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")->
                 ?>
             </div>
 
+            <?php
+            if(\Yii::$app->user->can('admin')){
+            ?>
             <div class="col-md-4">
                 <?= $form->field($model, 'id_oficial')
                 ->widget(Select2::classname(), [
                 'data' => ArrayHelper::map($oficiales, 'id_oficial', 'nombreCompleto'),
                 'language' => 'es',
-                'options' => ['placeholder' => 'Seleccionar oficial'],
+                'options' => ['placeholder' => 'Seleccionar oficial / TEA'],
                 'pluginOptions' => [
                 'allowClear' => true
                 ],
                 ]);
                 ?>
             </div>
-
+            <?php
+            }
+            ?>
             <!-- <div class="col-md-4">
                 <?php //= $form->field($model, 'txt_folio') ?>
             </div> -->
@@ -100,8 +107,17 @@ $paises = CatPaises::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")->
                 // ]);?>
             </div> -->
 
-            <div class="col-md-4">
-                <?=$form->field($model, 'txt_oficina') ?>
+             <div class="col-md-4">
+                <?= $form->field($model, 'txt_oficina')
+                ->widget(Select2::classname(), [
+                'data' => ArrayHelper::map($oficinas, 'txt_nombre', 'txt_nombre'),
+                'language' => 'es',
+                'options' => ['placeholder' => 'Seleccionar oficia'],
+                'pluginOptions' => [
+                'allowClear' => true
+                ],
+                ]);
+                ?>
             </div>
 
             <!-- <div class="col-md-4">
