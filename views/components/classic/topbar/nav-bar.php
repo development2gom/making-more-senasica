@@ -25,9 +25,9 @@ role="navigation">
       <img class="navbar-brand-logo logo-brand-senasica navbar-brand-logo-normal" src="<?=Url::base()?>/webAssets/images/logo-senasica-horizontal.png"
       title="Senesica">
       
-      <img class="navbar-brand-logo navbar-brand-logo-special" src="<?=Url::base()?>/webAssets/images/logo-sagarpa-horizontal.png"
+      <img class="navbar-brand-logo logo-brand-sagarpa navbar-brand-logo-special" src="<?=Url::base()?>/webAssets/images/logo-sagarpa-horizontal.png"
       title="Senesica">
-      <img class="navbar-brand-logo navbar-brand-logo-special" src="<?=Url::base()?>/webAssets/images/logo-senasica-horizontal.png"
+      <img class="navbar-brand-logo logo-brand-senasica navbar-brand-logo-special" src="<?=Url::base()?>/webAssets/images/logo-senasica-horizontal.png"
       title="Senesica">
     </a>
     
