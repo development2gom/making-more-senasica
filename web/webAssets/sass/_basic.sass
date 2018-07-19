@@ -329,17 +329,24 @@ body.pace-done
 	// padding-top: 7.858rem
 	padding-top: 9.125rem
 
+body.site-navbar-small.site-navbar-collapse-show
+	+respond-to(xs)
+		padding-top: 9.125rem
+
 /*  Header
 	======================================= */
 .navbar-inverse
 	background-color: $primary
+	background-color: red
 	.navbar-collapse,
 	.navbar-form
 		border-color: $primary
+		border-color: red
 
 body,
 body.site-navbar-small,
 	.site-navbar
+		background: $white
 		background-color: $white
 		height: 4.286rem
 		min-height: 4.286rem
@@ -417,17 +424,20 @@ body.site-navbar-small,
 			max-width: 100%
 			width: 100%
 
-// .sub-navbar .navbar-collapse
-// 	background-color: $white
-
-// .navbar-inverse .navbar-collapse,
-// .navbar-inverse .navbar-form
-// 	background-color: $white
-
+.navbar-inverse .navbar-toggler
+	color: $c-black-0
 
 .site-navbar-senasica
 	.collapse.navbar-collapse.navbar-collapse-toolbar
 		background-color: $white
+		border-color: $c-white-f6
+
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form
+	border-color: $c-white-f6 !important
+
+.sub-navbar .navbar-collapse
+	background-color: $white !important
 
 /*  Footer
 	======================================= */
