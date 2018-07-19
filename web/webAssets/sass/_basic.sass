@@ -338,33 +338,34 @@ body.pace-done
 		border-color: $primary
 
 body,
-.site-navbar-small	
+body.site-navbar-small,
 	.site-navbar
-		height: 4.286rem
-		min-height: 4.286rem
-
-
-body,
-body.site-navbar-small	
-	.site-navbar
+		background-color: $white
 		height: 4.286rem
 		min-height: 4.286rem
 		.navbar-brand
-			@extend .fs-34
-			@extend .fw-light
-			padding: 10px 0 12px
+			align-items: center
+			display: flex
+			justify-content: flex-start
+			padding: 4px 0
+			img.logo-brand-sagarpa
+				margin-right: 4px
+			img.logo-brand-senasica
+				margin-left: 4px
+			
 		.navbar-toolbar
 			> li
 				> a
-					color: $white
+					color: $c-black-0
 					padding-bottom: .957rem
 					padding-top: .957rem
 					text-decoration: none
 					&:focus,
 					&:hover
-						background-color: rgba($c-black-3,.8)
+						background-color: rgba($c-black-3,.1)
+						color: $c-black-0
 					+respond-to(xs)
-						color: $white !important
+						color: $c-black-0 !important
 						padding-left: 10px
 						padding-right: 10px
 			
@@ -374,19 +375,19 @@ body.site-navbar-small
 
 			> .dropdown
 				> a
-					color: $white
+					color: $c-black-0
 					height: 100%
 					// line-height: 32px
 					padding-bottom: .957rem
 					padding-top: .957rem
 					&:focus,
 					&:hover
-						background-color: rgba($c-black-3,.8)
+						background-color: rgba($c-black-3,.1)
 				
 .nav .open > a,
 .nav .open > a:focus,
 .nav .open > a:hover
-	background-color: rgba($c-black-3,.8) !important
+	background-color: rgba($c-black-3,.1) !important
 
 .navbar-inverse
 	.navbar-toolbar
@@ -396,8 +397,10 @@ body.site-navbar-small
 .site-navbar
 	.navbar-header
 		.navbar-brand-logo
-			// height: 34px
-			height: 22px
+			&.logo-brand-sagarpa
+				height: 26px
+			&.logo-brand-senasica
+				height: 22px
 
 .site-navbar.navbar.navbar-default
 
@@ -413,6 +416,18 @@ body.site-navbar-small
 		+respond-to(xs)
 			max-width: 100%
 			width: 100%
+
+// .sub-navbar .navbar-collapse
+// 	background-color: $white
+
+// .navbar-inverse .navbar-collapse,
+// .navbar-inverse .navbar-form
+// 	background-color: $white
+
+
+.site-navbar-senasica
+	.collapse.navbar-collapse.navbar-collapse-toolbar
+		background-color: $white
 
 /*  Footer
 	======================================= */

@@ -4,7 +4,7 @@ use app\modules\ModUsuarios\models\EntUsuarios;
 $usuario = EntUsuarios::getUsuarioLogueado();
 
 ?>
-<nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega navbar-inverse  sub-navbar"
+<nav class="site-navbar-senasica site-navbar navbar navbar-default navbar-fixed-top navbar-mega navbar-inverse  sub-navbar"
 role="navigation">
 
   <div class="nav-menu-container">
@@ -20,7 +20,15 @@ role="navigation">
       <i class="icon wb-more-horizontal" aria-hidden="true"></i>
     </button>
     <a class="navbar-brand navbar-brand-center" href="<?=Url::base()?>">
-      Senasica
+      <img class="navbar-brand-logo logo-brand-sagarpa navbar-brand-logo-normal" src="<?=Url::base()?>/webAssets/images/logo-sagarpa-horizontal.png"
+      title="Senesica">
+      <img class="navbar-brand-logo logo-brand-senasica navbar-brand-logo-normal" src="<?=Url::base()?>/webAssets/images/logo-senasica-horizontal.png"
+      title="Senesica">
+      
+      <img class="navbar-brand-logo navbar-brand-logo-special" src="<?=Url::base()?>/webAssets/images/logo-sagarpa-horizontal.png"
+      title="Senesica">
+      <img class="navbar-brand-logo navbar-brand-logo-special" src="<?=Url::base()?>/webAssets/images/logo-senasica-horizontal.png"
+      title="Senesica">
     </a>
     
   </div>
@@ -44,9 +52,9 @@ role="navigation">
         <li class="nav-item">
           <a class="nav-link no-pjax" href="<?=Url::base()?>/reportes">Reportes</a>
         </li>
-        <li class="nav-item">
-          <!-- <a class="nav-link no-pjax" href="<?=Url::base()?>/actas-retencion">Actas</a> -->
-        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link no-pjax" href="<?=Url::base()?>/actas-retencion">Actas</a>
+        </li> -->
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle no-pjax" data-toggle="dropdown" role="button" aria-expanded="false">Catálogos <span class="caret"></span></a>
