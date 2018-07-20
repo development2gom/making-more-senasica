@@ -7,8 +7,11 @@ use Yii;
 /**
  * This is the model class for table "cat_oisas".
  *
- * @property int $id_oisas
+ * @property string $id_oisas
  * @property string $txt_nombre
+ * @property string $txt_email
+ * @property string $txt_telefono
+ * @property string $txt_extension
  * @property string $txt_descripcion
  * @property int $b_habilitado
  *
@@ -30,9 +33,17 @@ class CatOisas extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['txt_nombre', 'txt_email', 'txt_telefono', 'txt_descripcion'], 'required'],
             [['txt_descripcion'], 'string'],
-            [['b_habilitado', 'id_oisas'], 'integer'],
-            [['txt_nombre'], 'string', 'max' => 100],
+            [['b_habilitado'], 'integer'],
+            [['txt_nombre', 'txt_email'], 'string', 'max' => 100],
+            [['txt_telefono', 'txt_extension'], 'string', 'max' => 10],
+            [ 
+                'txt_email',
+                'trim' 
+            ],
+            ['txt_email', 'email', 'message'=>'Debe agregar un email válido'],
+            // ['txt_email','validateBlocked'],
         ];
     }
 
@@ -43,8 +54,11 @@ class CatOisas extends \yii\db\ActiveRecord
     {
         return [
             'id_oisas' => 'Id Oisas',
-            'txt_nombre' => 'Txt Nombre',
-            'txt_descripcion' => 'Txt Descripcion',
+            'txt_nombre' => 'Nombre',
+            'txt_email' => 'Email',
+            'txt_telefono' => 'Teléfono',
+            'txt_extension' => 'Extensión',
+            'txt_descripcion' => 'Descripción',
             'b_habilitado' => 'B Habilitado',
         ];
     }
