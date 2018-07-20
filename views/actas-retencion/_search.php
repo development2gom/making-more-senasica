@@ -290,10 +290,23 @@ $oficinas = CatOisas::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")-
             </div> -->
             
             <div class="col-md-12">
+
                 <div class="form-group text-right">
-                <?= Html::resetButton('Restablecer', ['class' => 'btn btn-default']) ?>
-                <?= Html::submitButton('Buscar', ['class' => 'btn btn-primary']) ?>
+                    <?= Html::resetButton(
+                        '<span><i class="icon wb-rubber" aria-hidden="true"></i> Restablecer</span>',
+                        [
+                            'class' => $model->isNewRecord ? 'btn btn-animate btn-animate-side btn-default' : 'btn btn-animate btn-animate-side btn-primary',
+                        ]
+                    ) ?>
+
+                    <?= Html::submitButton(
+                        '<span><i class="icon wb-search" aria-hidden="true"></i> Buscar</span>',
+                        [
+                            'class' => $model->isNewRecord ? 'btn btn-animate btn-animate-side btn-primary' : 'btn btn-animate btn-animate-side btn-primary',
+                        ]
+                    ) ?>
                 </div>
+
             </div>
 
         </div>
