@@ -132,9 +132,18 @@ $oisas = CatOisas::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")->al
 
         <div class="row">
             <div class="col-md-12">
+
                 <div class="form-group text-right">
-                    <?= Html::submitButton('<span class="ladda-label"><i class="icon wb-plus"></i> Guardar usuario</span>', ['class' => "btn btn-primary ladda-button btn-usuarios-add", "data-style" => "zoom-in", "id" => "btn-guardar-usuario"]) ?>
+                    <?= Html::submitButton(
+                        '<span class="ladda-label"><span><i class="icon wb-download" aria-hidden="true"></i> Guardar usuario </span></span>',
+                        [
+                            'class' => $model->isNewRecord ? 'btn btn-animate btn-animate-side btn-primary btn-usuarios-add ladda-button' : 'btn btn-animate btn-animate-side btn-primary btn-usuarios-add ladda-button',
+                            "data-style" => "zoom-in",
+                            "id" => "btn-guardar-usuario"
+                        ]
+                    ) ?>
                 </div>
+
             </div>
         </div>
 
