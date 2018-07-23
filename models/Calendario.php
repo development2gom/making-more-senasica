@@ -44,6 +44,24 @@ class Calendario
      * @param string $string
      * @return string
      */
+    public static function getNumberWeek($string = null)
+    {
+        // Inicializamos la fecha y hora actual
+        $tiempo = time();
+        if ($string) {
+            $tiempo = strtotime($string);
+        }
+
+        $fecha = date('W', $tiempo);
+
+        return $fecha;
+    }
+
+    /**
+     * Regresa el número de la semana
+     * @param string $string
+     * @return string
+     */
     public static function getNumberDayWeek($string = null)
     {
         // Inicializamos la fecha y hora actual
@@ -93,6 +111,27 @@ class Calendario
         return $nombreMes;
 
     }
+
+    /**
+     * Regresa el número del mes
+     * @param string $string
+     * @return string
+     */
+    public static function getWeekNumber($string = null)
+    {
+        // Inicializamos la fecha y hora actual
+
+        $tiempo = time();
+        if ($string) {
+            $tiempo = strtotime($string);
+        }
+        $fecha = date('m', $tiempo);
+
+
+        return $fecha;
+
+    }
+
 
     /**
      * Regresa el número del mes

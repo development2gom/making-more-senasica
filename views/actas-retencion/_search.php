@@ -89,9 +89,7 @@ $oficinas = CatOisas::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")-
                 ]);
                 ?>
             </div>
-            <?php
-            }
-            ?>
+           
             <!-- <div class="col-md-4">
                 <?php //= $form->field($model, 'txt_folio') ?>
             </div> -->
@@ -119,7 +117,9 @@ $oficinas = CatOisas::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")-
                 ]);
                 ?>
             </div>
-
+            <?php
+            }
+            ?>
             <!-- <div class="col-md-4">
 
                 <?php // = $form->field($model, 'txt_tipo_identificacion')

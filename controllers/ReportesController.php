@@ -6,6 +6,7 @@ use yii\web\Controller;
 use app\models\WrkActasRetencion;
 use app\models\WrkActasRetencionSearch;
 use app\components\AccessControlExtend;
+use app\models\Calendario;
 
 
 class ReportesController extends Controller{
@@ -49,32 +50,27 @@ class ReportesController extends Controller{
         foreach($dataProvider->getModels() as $model){
             $oficial = $model->oficial;
             $data[$model->id_acta_retencion] = [
-                $oficial->nombreCompleto,
-                $model->txt_folio,
-                $model->txt_fecha,
                 $model->txt_oficina,
-                $model->txt_tipo_identificacion,
-                $model->txt_numero_identificacion,
-                $model->txt_nombre,
-                $model->txt_apellido_paterno,
-                $model->txt_apellido_materno,
+                $model->txt_nombre." ".$model->txt_apellido_paterno." ".$model->txt_apellido_materno,
                 $model->txt_nacionalidad,
-                $model->txt_correo,
-                $model->txt_estado,
-                $model->txt_municipio,
-                $model->txt_calle,
-                $model->txt_numero,
-                $model->txt_tipo_acta,
-                $model->txt_pais_origen,
-                $model->txt_pais_procedencia,
+                $model->txt_calle." ".$model->txt_numero ." ".$model->txt_municipio ." ".$model->txt_estado,
                 $model->txt_tipo_mercancia,
                 $model->txt_cantidad,
                 $model->txt_unidad_medida,
-                $model->txt_descripcion_hechos,
+                $model->txt_pais_origen,
+                $model->txt_pais_procedencia,
+                Calendario::getDateComplete($model->txt_fecha),
+                Calendario::getYearLastDigit($model->txt_fecha),
+                Calendario::getMonthNumber($model->txt_fecha),
+                Calendario::getNumberWeek($model->txt_fecha),
+                Calendario::getDayNumber($model->txt_fecha),
+                "Ambito",
                 $model->txt_detectado_por,
                 $model->txt_dictamen,
-                $model->txt_nombre_verificador_tea,
-                $model->txt_clave_verificador_tea
+                $oficial->nombreCompleto,
+                "Tercero", 
+                $model->txt_folio,
+               
             ];
 
 
@@ -101,10 +97,9 @@ class ReportesController extends Controller{
     }
 
     public function setHeaders(){
-        return["Oficial / TEA", "Folio", "Fecha", "Oficina", "Tipo identificacion", 
-            "Número identificación", "Nombre", "Apellido paterno", "Apellido materno", 
-            "Nacionalidad", "Correo", "Estado", "Municipio", "Calle", "Numero", "Tipo acta", 
-            "País origen", "País procedencia", "Tipo mercancia", "Cantidad", "Unidad medida", 
-            "Descripción hechos", "Detectado por", "Dictamen", "Nombre verificador tea", "Clave verificador tea"];
+        return ["Oficina de inspección", "Nombre pasajero", "Nacionalidad", "Domicilio", "Tipo producto", "Cantidad", "Unidad medida",
+                "País origen", "País procedencia", "Fecha", "Año", "Mes", "Semana", "Día", "Ámbito", "Detectado por", "Dictamen", "Oficial",
+                "Tercero", "Folio documento"];
+       
     }
 }

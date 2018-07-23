@@ -62,10 +62,9 @@ class WrkActasRetencionSearch extends WrkActasRetencion
             // $query->where('0=1');
             return $dataProvider;
         }
-
-        
-        if(\Yii::$app->user->can('TEA')){
-            $usuario = EntUsuarios::getUsuarioLogueado();
+        $usuario = EntUsuarios::getUsuarioLogueado();
+        if($usuario->txt_auth_item=="TEA"){
+            
             $oficial = EntOficiales::find()->where(["uddi"=>$usuario->txt_token])->one();
             // grid filtering conditions
             $query->andFilterWhere([
@@ -82,6 +81,10 @@ class WrkActasRetencionSearch extends WrkActasRetencion
             ]);
         }
 
+        if($usuario->txt_auth_item=="oficial" || $usuario->txt_auth_item=="TEA"){
+            $oisa = CatOisas::find()->where(["id_oisas"=>$usuario->id_oisa])->one();
+            $this->txt_oficina = $oisa->txt_nombre;
+        }
         
 
         $query->andFilterWhere(['like', 'uddi', $this->uddi])
