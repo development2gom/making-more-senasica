@@ -64,11 +64,11 @@ class ReportesController extends Controller{
                 Calendario::getMonthNumber($model->txt_fecha),
                 Calendario::getNumberWeek($model->txt_fecha),
                 Calendario::getDayNumber($model->txt_fecha),
-                "Ambito",
+                $model->txt_tipo_acta,
                 $model->txt_detectado_por,
                 $model->txt_dictamen,
+                $model->txt_nombre_completo_oficial,
                 $oficial->nombreCompleto,
-                "Tercero", 
                 $model->txt_folio,
                
             ];
