@@ -7,6 +7,26 @@ class Calendario
 {
 
     /**
+	 * Cambia el formato de la fecha
+	 * 
+	 * @param unknown $string        	
+	 */
+	public static function changeFormatDate($string) {
+		$date = date_create ($string );
+		return date_format ( $date, "d-m-Y" );
+	}
+
+	public static function changeFormatDateInputShort($string) {
+		$date = date_create ($string );
+		return date_format ( $date, "Y-m-d" );
+    }
+    
+    public static function changeFormatDateHour($string) {
+		$date = date_create ($string );
+		return date_format ( $date, "Y/m/d H:i:s" );
+	}
+
+    /**
 	 * Obtenemos la fecha actual para guardarla en la base de datos
 	 *
 	 * @return string

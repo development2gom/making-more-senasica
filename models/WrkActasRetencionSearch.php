@@ -7,6 +7,7 @@ use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\models\WrkActasRetencion;
 use app\modules\ModUsuarios\models\EntUsuarios;
+use app\modules\ModUsuarios\models\Utils;
 
 /**
  * WrkActasRetencionSearch represents the model behind the search form of `app\models\WrkActasRetencion`.
@@ -15,6 +16,8 @@ class WrkActasRetencionSearch extends WrkActasRetencion
 {
     public $startDate;
     public $endDate;
+    public $startTime;
+    public $endTime;
     /**
      * @inheritdoc
      */
@@ -22,7 +25,7 @@ class WrkActasRetencionSearch extends WrkActasRetencion
     {
         return [
             [['id_acta_retencion', 'id_oficial', 'data'], 'integer'],
-            [['uddi', 'txt_folio',"startDate","endDate", 'txt_fecha', 'txt_oficina', 'txt_tipo_identificacion', 'txt_numero_identificacion', 'txt_nombre', 'txt_apellido_paterno', 'txt_apellido_materno', 'txt_nacionalidad', 'txt_correo', 'txt_estado', 'txt_municipio', 'txt_calle', 'txt_numero', 'txt_tipo_acta', 'txt_pais_origen', 'txt_pais_procedencia', 'txt_tipo_mercancia', 'txt_cantidad', 'txt_unidad_medida', 'txt_descripcion_hechos', 'txt_detectado_por', 'txt_dictamen', 'txt_nombre_verificador_tea', 'txt_clave_verificador_tea', 'txt_nombre_completo_oficial'], 'safe'],
+            [['uddi', 'txt_folio',"startDate","endDate","startTime", "endTime", 'txt_fecha', 'txt_oficina', 'txt_tipo_identificacion', 'txt_numero_identificacion', 'txt_nombre', 'txt_apellido_paterno', 'txt_apellido_materno', 'txt_nacionalidad', 'txt_correo', 'txt_estado', 'txt_municipio', 'txt_calle', 'txt_numero', 'txt_tipo_acta', 'txt_pais_origen', 'txt_pais_procedencia', 'txt_tipo_mercancia', 'txt_cantidad', 'txt_unidad_medida', 'txt_descripcion_hechos', 'txt_detectado_por', 'txt_dictamen', 'txt_nombre_verificador_tea', 'txt_clave_verificador_tea', 'txt_nombre_completo_oficial'], 'safe'],
         ];
     }
 
@@ -85,11 +88,47 @@ class WrkActasRetencionSearch extends WrkActasRetencion
             $oisa = CatOisas::find()->where(["id_oisas"=>$usuario->id_oisa])->one();
             $this->txt_oficina = $oisa->txt_nombre;
         }
+
+
+        if(!$this->endTime){
+            $this->endTime = "23:59";
+        }
+
+        if($this->startDate && $this->endDate){
+
+            $this->startDate = Calendario::changeFormatDateHour($this->startDate." ".$this->startTime);
+
+            $this->endDate = Calendario::changeFormatDateHour($this->endDate." ".$this->endTime);
+
+            $query->andFilterWhere(['between', 'txt_fecha', $this->startDate, $this->endDate]);
+
+            $this->startDate = Calendario::changeFormatDate($this->startDate);
+            $this->endDate = Calendario::changeFormatDate($this->endDate);
+
+        }else if($this->startDate && !$this->endDate){
+
+            $this->startDate = Calendario::changeFormatDateHour($this->startDate." ".$this->startTime);
+
+
+            $query->andFilterWhere(['>', 'txt_fecha', $this->startDate]);
+
+            $this->startDate = Calendario::changeFormatDate($this->startDate);
+            
+        }else if(!$this->startDate && $this->endDate){
+            
+
+            $this->endDate = Calendario::changeFormatDateHour($this->endDate." ".$this->endTime);
+
+            $query->andFilterWhere(['<', 'txt_fecha', $this->endDate]);
+
+            $this->endDate = Calendario::changeFormatDate($this->endDate);
+            
+        }
         
 
         $query->andFilterWhere(['like', 'uddi', $this->uddi])
             ->andFilterWhere(['like', 'txt_folio', $this->txt_folio])
-            ->andFilterWhere(['like', 'txt_fecha', $this->txt_fecha])
+            
             ->andFilterWhere(['like', 'txt_oficina', $this->txt_oficina])
             ->andFilterWhere(['like', 'txt_tipo_identificacion', $this->txt_tipo_identificacion])
             ->andFilterWhere(['like', 'txt_numero_identificacion', $this->txt_numero_identificacion])

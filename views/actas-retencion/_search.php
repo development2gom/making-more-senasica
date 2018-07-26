@@ -14,6 +14,7 @@ use app\models\CatTiposMercancias;
 use app\models\CatPaises;
 use kartik\date\DatePicker;
 use app\models\CatOisas;
+use kartik\time\TimePicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\WrkActasRetencionSearch */
@@ -72,6 +73,16 @@ $oficinas = CatOisas::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")-
                 ]);
 
                 ?>
+            </div>
+
+            <div class="col-md-6">
+                <?=$form->field($model, 'startTime')->widget(TimePicker::classname(), [
+                    
+                ])->label("Hora inicio");?>
+            </div>
+
+            <div class="col-md-6">
+                <?=$form->field($model, 'endTime')->widget(TimePicker::classname(), [])->label("Hora final");?>
             </div>
 
             <?php
