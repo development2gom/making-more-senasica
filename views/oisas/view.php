@@ -23,7 +23,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Editar', ['update', 'id' => $model->id_oisas], ['class' => 'btn btn-primary']) ?>
         <?= Html::button('Eliminar', [
-            'class' => 'btn btn-danger js-eliminar-oisa'
+            'class' => 'btn btn-danger js-eliminar-oisa',
+            'data-id' => $model->id_oisas
         ]) ?>
     </p>
 
