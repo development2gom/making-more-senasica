@@ -1,0 +1,6 @@
+ALTER TABLE `cat_oisas`
+	ADD COLUMN `txt_email` VARCHAR(100) NOT NULL DEFAULT '' AFTER `txt_nombre`,
+	ADD COLUMN `txt_telefono` VARCHAR(10) NOT NULL DEFAULT '' AFTER `txt_email`,
+	ADD COLUMN `txt_extension` VARCHAR(10) NULL DEFAULT NULL AFTER `txt_telefono`;
+
+    
