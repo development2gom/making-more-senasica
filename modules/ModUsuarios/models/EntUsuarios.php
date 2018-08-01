@@ -316,8 +316,7 @@ class EntUsuarios extends \yii\db\ActiveRecord implements IdentityInterface
 			"txt_curp" => "CURP",
 			"id_area" => "Area",
 			"id_oisa" => "OISA",
-			"txt_conmutador" => "Conmutador",
-			"txt_extension_numero_local" => "Extensión o número local"
+			
 		];
 	}
 
