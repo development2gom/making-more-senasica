@@ -68,7 +68,8 @@ class EntUsuarios extends \yii\db\ActiveRecord implements IdentityInterface
 				'compareAttribute' => 'txt_email',
 				'on' => 'registerInput',
 				'message' => 'Los email deben coincidir'
-			],
+			],[['txt_email'], 'email'],
+
 			[
 				[
 					'txt_curp'
