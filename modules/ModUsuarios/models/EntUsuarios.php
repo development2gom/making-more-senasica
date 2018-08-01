@@ -173,6 +173,10 @@ class EntUsuarios extends \yii\db\ActiveRecord implements IdentityInterface
 				'trim'
 			],
 			[
+				'txt_email',
+				'email'
+			],
+			[
 				'txt_username',
 				'trim'
 			],
