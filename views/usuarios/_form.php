@@ -80,15 +80,7 @@ $oisas = CatOisas::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")->al
                 <?= $form->field($model, 'txt_rfc')->textInput(['maxlength' => true, 'placeholder' => 'RFC'])->label(false) ?>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4">
-                <?= $form->field($model, 'txt_conmutador')->textInput(['maxlength' => true, 'placeholder' => 'Conmutador'])->label(false) ?>
-            </div>
-            <div class="col-md-4">
-                <?= $form->field($model, 'txt_extension_numero_local')->textInput(['maxlength' => true, 'placeholder' => 'Extensión o Número local'])->label(false) ?>
-            </div>
-           
-        </div>
+        
         <div class="row">
             <div class="col-md-6">
                 
@@ -116,14 +108,14 @@ $oisas = CatOisas::find()->where(["b_habilitado"=>1])->orderBy("txt_nombre")->al
             </div>
         </div>
         
-        <h5>Datos de Usuario</h5>
+        <h5>Datos de acceso a la plataforma (Web/App)</h5>
         <div class="row">
             <div class="col-md-6">
-                <?= $form->field($model, 'txt_email')->textInput(['maxlength' => true, 'placeholder' => 'Usuario'])->label(false) ?>
+                <?= $form->field($model, 'txt_email')->textInput(['maxlength' => true, 'placeholder' => 'Usuario de acceso'])->label(false) ?>
             </div>
             <div class="col-md-6">
             <?= $form->field($model, 'password')
-                ->textInput(['placeholder' => 'Contraseña'])
+                ->textInput(['placeholder' => 'Contraseña de acceso'])
                 ->label(false)
                 
                     ?>
