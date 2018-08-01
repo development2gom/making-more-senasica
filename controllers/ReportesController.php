@@ -59,7 +59,7 @@ class ReportesController extends Controller{
                 $model->txt_unidad_medida,
                 $model->txt_pais_origen,
                 $model->txt_pais_procedencia,
-                Calendario::getDateComplete($model->txt_fecha),
+                Calendario::getDateCompleteHour($model->txt_fecha),
                 Calendario::getYearLastDigit($model->txt_fecha),
                 Calendario::getMonthNumber($model->txt_fecha),
                 Calendario::getNumberWeek($model->txt_fecha),
@@ -68,7 +68,7 @@ class ReportesController extends Controller{
                 $model->txt_detectado_por,
                 $model->txt_dictamen,
                 $model->txt_nombre_completo_oficial,
-                $oficial->nombreCompleto,
+                $model->txt_clave_verificador_tea,
                 $model->txt_folio,
                
             ];
